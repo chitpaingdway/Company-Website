@@ -48,10 +48,9 @@
         .pricing-card { border: 1px solid #e2e8f0; border-radius: 2rem; padding: 2.5rem; transition: 0.3s; background: white; }
         .pricing-card:hover { border-color: #059669; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(5,150,105,0.1); }
 
-        /* --- UPDATED PARTNERS LOGO SLIDER (COLOURFUL & ARRANGED) --- */
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 9)); } }
-        .slider { height: 140px; margin: auto; overflow: hidden; position: relative; width: auto; display: flex; align-items: center; }
-        .slider .slide-track { animation: scroll 40s linear infinite; display: flex; width: calc(250px * 18); align-items: center; }
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
+        .slider { height: 120px; margin: auto; overflow: hidden; position: relative; width: auto; }
+        .slider .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
         .slider .slide { height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 30px; }
         .slider .slide img { 
             max-width: 100%; 
@@ -67,6 +66,7 @@
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden-section { display: none !important; }
 
+        /* --- NEW APPLE STYLE TEAM DESIGN --- */
         .team-glass-card {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px) saturate(150%);
@@ -84,18 +84,31 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
             border-color: rgba(5, 150, 105, 0.4);
         }
-        .team-glass-card:active { transform: scale(0.96); transition: all 0.1s ease; }
+        .team-glass-card:active {
+            transform: scale(0.96);
+            transition: all 0.1s ease;
+        }
         .team-img-wrapper {
-            width: 160px; height: 160px; margin: 0 auto 1.5rem;
-            border-radius: 50%; padding: 6px;
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 1.5rem;
+            border-radius: 50%;
+            padding: 6px;
             background: linear-gradient(135deg, rgba(5,150,105,0.2) 0%, rgba(37,99,235,0.1) 100%);
             transition: transform 0.5s ease;
         }
-        .team-glass-card:hover .team-img-wrapper { transform: scale(1.05); }
-        .team-img-wrapper img {
-            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
-            border: 4px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        .team-glass-card:hover .team-img-wrapper {
+            transform: scale(1.05);
         }
+        .team-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        /* --- END NEW DESIGN --- */
     </style>
 </head>
 <body class="bg-[#fcfdfe] text-slate-900 overflow-x-hidden">
@@ -135,7 +148,7 @@
             </div>
         </section>
 
-        <section id="partners" class="py-20 bg-white border-y border-slate-100">
+         <section id="partners" class="py-20 bg-white border-y border-slate-100">
             <div class="text-center mb-12">
                 <h3 class="text-[11px] font-black tracking-[0.4em] text-slate-400 uppercase">Trusted by Authorities & Licensing Bodies</h3>
             </div>
@@ -148,8 +161,8 @@
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b3bc7ac69a1d309682b7_tam.png" alt="TAMM"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c83_09-dark.svg" alt="Authority"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c01_client-04.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c00_client-03.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c04_client-05.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c00_client-03.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c04_client-05.svg" alt="Partner"></div>
                     
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b37fda8ff78ec283f396_ded-det.png" alt="DED"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b31d02c430369cfc9351_ifza-logo.png" alt="IFZA"></div>
@@ -158,8 +171,8 @@
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b3bc7ac69a1d309682b7_tam.png" alt="TAMM"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c83_09-dark.svg" alt="Authority"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c01_client-04.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c00_client-03.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c04_client-05.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c00_client-03.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c04_client-05.svg" alt="Partner"></div>
                 </div>
             </div>
         </section>
@@ -191,7 +204,8 @@
             <div class="text-center mb-20" data-aos="fade-up">
                 <h3 class="text-xs font-black tracking-[0.3em] text-slate-400 uppercase mb-4">What we offer</h3>
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-600">Our core consulting services</h2>
-                <h4 class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto font-medium">We provide comprehensive market entry services in English, French, Hindi, and Arabic to help international companies establish operations.</h4>
+                <h4 class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto font-medium">We provide comprehensive market entry services in English, French, Hindi, 
+                    and Arabic to help international companies establish operations, connect with partners, and achieve sustainable growth in UAE and MENA</h4>
             </div>
             
             <div class="grid md:grid-cols-4 gap-6">
@@ -222,22 +236,30 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10" data-aos="zoom-in">
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='fathi.png') }}" alt="Fathi Sakhri"></div>
+                        <div class="team-img-wrapper">
+                            <img src="{{ url_for('static', filename='fathi.png') }}" alt="Fathi Sakhri">
+                        </div>
                         <h4 class="font-black text-xl text-slate-800">Fathi Sakhri</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Co-Founder & CEO</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='nadia.png') }}" alt="Nadia Toughrani"></div>
+                        <div class="team-img-wrapper">
+                            <img src="{{ url_for('static', filename='nadia.png') }}" alt="Nadia Toughrani">
+                        </div>
                         <h4 class="font-black text-xl text-slate-800">Nadia Toughrani</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Co-Founder & CMO</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='farhan.png') }}" alt="Muhammad Farhan"></div>
+                        <div class="team-img-wrapper">
+                            <img src="{{ url_for('static', filename='farhan.png') }}" alt="Muhammad Farhan">
+                        </div>
                         <h4 class="font-black text-xl text-slate-800">Muhammad Farhan</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Business Advisor</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='jelly.png') }}" alt="Jelly Montierde"></div>
+                        <div class="team-img-wrapper">
+                            <img src="{{ url_for('static', filename='jelly.png') }}" alt="Jelly Montierde">
+                        </div>
                         <h4 class="font-black text-xl text-slate-800">Jelly Montierde</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Business Advisor</p>
                     </div>
@@ -256,7 +278,7 @@
                         <input type="text" name="name" placeholder="Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <input type="email" name="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <input type="text" name="phone" placeholder="Phone Number" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
-                        <select name="service" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white" required>
+                        <select name="service" id="formServiceSelect" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white appearance-none" required>
                             <option value="" disabled selected>Select a Service</option>
                             <option value="Business Setup">Business Setup & Incorporation</option>
                             <option value="Administrative Services">Administrative Services</option>
@@ -264,7 +286,10 @@
                             <option value="Market Access">Market Access</option>
                         </select>
                         <textarea name="description" placeholder="How can we help you?" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white h-32" required></textarea>
-                        <button type="submit" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition">SEND MESSAGE</button>
+                        <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition flex items-center justify-center gap-3">
+                            <span id="btnText">SEND MESSAGE</span>
+                            <div id="btnLoader" class="loader hidden"></div>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -397,25 +422,53 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false });
+        AOS.init({ duration: 1000, once: false, mirror: true });
 
         const serviceData = {
-            setup: { title: "Business Setup & Incorporation", category: "Market Entry", desc: "Support to establish your legal presence in the UAE.", img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp", features: ["Mainland & Free Zone", "Trade License Setup"] },
-            admin: { title: "Administrative Services", category: "Operations", desc: "Government approvals, visas, and documentation.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800", features: ["Visa Processing", "Document Attestation"] },
-            it: { title: "Technology & IT Services", category: "Innovation", desc: "Full-scale IT infrastructure.", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800", features: ["IT Setup", "Cloud Solutions"] },
-            market: { title: "Market Access & Partnerships", category: "Growth", desc: "Strategic networking and local partnership.", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800", features: ["Partner Sourcing", "Strategy Consulting"] }
+            setup: {
+                title: "Business Setup & Incorporation",
+                category: "Market Entry",
+                desc: "We provide comprehensive support to establish your legal presence in the UAE with a 100% success rate.",
+                img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp",
+                features: ["Mainland & Free Zone", "Trade License Setup", "Legal Consulting"]
+            },
+            admin: {
+                title: "Administrative & PRO Services",
+                category: "Operations",
+                desc: "Focus on your growth while we handle government approvals, visas, and documentation.",
+                img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+                features: ["Visa Processing", "Document Attestation", "Government Liaison"]
+            },
+            it: {
+                title: "Technology & IT Services",
+                category: "Innovation",
+                desc: "Full-scale IT infrastructure and digital transformation strategies for new enterprises.",
+                img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+                features: ["IT Setup", "Cloud Solutions", "Cyber Security"]
+            },
+            market: {
+                title: "Market Access & Partnerships",
+                category: "Growth",
+                desc: "Strategic networking and local partnership development in the PAN region.",
+                img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+                features: ["Local Partner Sourcing", "Strategy Consulting", "Market Entry"]
+            }
         };
 
         function openDetail(key) {
             const data = serviceData[key];
             document.getElementById('main-page-content').classList.add('hidden-section');
             document.getElementById('service-detail-view').style.display = 'block';
+
             document.getElementById('detail-title').innerText = data.title;
             document.getElementById('detail-category').innerText = data.category;
             document.getElementById('detail-desc').innerText = data.desc;
             document.getElementById('detail-img').src = data.img;
+
             let featuresHtml = '';
-            data.features.forEach(f => { featuresHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`; });
+            data.features.forEach(f => {
+                featuresHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`;
+            });
             document.getElementById('detail-features').innerHTML = featuresHtml;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -424,7 +477,8 @@
             document.getElementById('main-page-content').classList.remove('hidden-section');
             document.getElementById('service-detail-view').style.display = 'none';
         }
-       function scrollToForm(planName) {
+
+        function scrollToForm(planName) {
             closeDetail();
             setTimeout(() => {
                 document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' });
