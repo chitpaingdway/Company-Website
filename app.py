@@ -103,3 +103,18 @@ def get_started():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+    from flask import Flask, render_template
+
+app = Flask(__name__)
+
+# ဒီလိုင်းလေးကို app = Flask(__name__) အောက်မှာ ထည့်ပေးပါ
+app.config['DEBUG'] = True
+
+@app.route('/')
+def index():
+    return render_template('index.html')
+
+# Vercel အတွက် ဒါလေးက အရေးကြီးပါတယ်
+app = app
