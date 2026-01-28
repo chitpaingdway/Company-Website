@@ -48,17 +48,25 @@
         .pricing-card { border: 1px solid #e2e8f0; border-radius: 2rem; padding: 2.5rem; transition: 0.3s; background: white; }
         .pricing-card:hover { border-color: #059669; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(5,150,105,0.1); }
 
-        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
-        .slider { height: 120px; margin: auto; overflow: hidden; position: relative; width: auto; }
-        .slider .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
-        .slider .slide { height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; filter: grayscale(100%); opacity: 0.4; transition: 0.5s; }
-        .slider .slide:hover { filter: grayscale(0%); opacity: 1; }
+        /* --- UPDATED PARTNERS LOGO SLIDER (COLOURFUL & ARRANGED) --- */
+        @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 9)); } }
+        .slider { height: 140px; margin: auto; overflow: hidden; position: relative; width: auto; display: flex; align-items: center; }
+        .slider .slide-track { animation: scroll 40s linear infinite; display: flex; width: calc(250px * 18); align-items: center; }
+        .slider .slide { height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; padding: 0 30px; }
+        .slider .slide img { 
+            max-width: 100%; 
+            max-height: 80px; 
+            object-fit: contain; 
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05)); /* Soft shadow for better look */
+            transition: transform 0.3s ease;
+        }
+        .slider .slide:hover img { transform: scale(1.1); }
+        /* --- END OF UPDATED SLIDER --- */
 
         .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden-section { display: none !important; }
 
-        /* --- NEW APPLE STYLE TEAM DESIGN --- */
         .team-glass-card {
             background: rgba(255, 255, 255, 0.4);
             backdrop-filter: blur(15px) saturate(150%);
@@ -76,31 +84,18 @@
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
             border-color: rgba(5, 150, 105, 0.4);
         }
-        .team-glass-card:active {
-            transform: scale(0.96);
-            transition: all 0.1s ease;
-        }
+        .team-glass-card:active { transform: scale(0.96); transition: all 0.1s ease; }
         .team-img-wrapper {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 1.5rem;
-            border-radius: 50%;
-            padding: 6px;
+            width: 160px; height: 160px; margin: 0 auto 1.5rem;
+            border-radius: 50%; padding: 6px;
             background: linear-gradient(135deg, rgba(5,150,105,0.2) 0%, rgba(37,99,235,0.1) 100%);
             transition: transform 0.5s ease;
         }
-        .team-glass-card:hover .team-img-wrapper {
-            transform: scale(1.05);
-        }
+        .team-glass-card:hover .team-img-wrapper { transform: scale(1.05); }
         .team-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 4px solid white;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            width: 100%; height: 100%; object-fit: cover; border-radius: 50%;
+            border: 4px solid white; box-shadow: 0 8px 20px rgba(0,0,0,0.1);
         }
-        /* --- END NEW DESIGN --- */
     </style>
 </head>
 <body class="bg-[#fcfdfe] text-slate-900 overflow-x-hidden">
@@ -153,8 +148,8 @@
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b3bc7ac69a1d309682b7_tam.png" alt="TAMM"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c83_09-dark.svg" alt="Authority"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c01_client-04.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c00_client-03.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c04_client-05.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c00_client-03.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c04_client-05.svg" alt="Partner"></div>
                     
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b37fda8ff78ec283f396_ded-det.png" alt="DED"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b31d02c430369cfc9351_ifza-logo.png" alt="IFZA"></div>
@@ -163,8 +158,8 @@
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/6960b3bc7ac69a1d309682b7_tam.png" alt="TAMM"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c83_09-dark.svg" alt="Authority"></div>
                     <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c01_client-04.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c00_client-03.svg" alt="Partner"></div>
-                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028afb/69609057904129d3d8028c04_client-05.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c00_client-03.svg" alt="Partner"></div>
+                    <div class="slide"><img src="https://cdn.prod.website-files.com/69609055904129d3d8028c04_client-05.svg" alt="Partner"></div>
                 </div>
             </div>
         </section>
@@ -196,8 +191,7 @@
             <div class="text-center mb-20" data-aos="fade-up">
                 <h3 class="text-xs font-black tracking-[0.3em] text-slate-400 uppercase mb-4">What we offer</h3>
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-600">Our core consulting services</h2>
-                <h4 class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto font-medium">We provide comprehensive market entry services in English, French, Hindi, 
-                    and Arabic to help international companies establish operations, connect with partners, and achieve sustainable growth in UAE and MENA</h4>
+                <h4 class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto font-medium">We provide comprehensive market entry services in English, French, Hindi, and Arabic to help international companies establish operations.</h4>
             </div>
             
             <div class="grid md:grid-cols-4 gap-6">
@@ -228,30 +222,22 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10" data-aos="zoom-in">
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper">
-                            <img src="{{ url_for('static', filename='fathi.png') }}" alt="Fathi Sakhri">
-                        </div>
+                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='fathi.png') }}" alt="Fathi Sakhri"></div>
                         <h4 class="font-black text-xl text-slate-800">Fathi Sakhri</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Co-Founder & CEO</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper">
-                            <img src="{{ url_for('static', filename='nadia.png') }}" alt="Nadia Toughrani">
-                        </div>
+                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='nadia.png') }}" alt="Nadia Toughrani"></div>
                         <h4 class="font-black text-xl text-slate-800">Nadia Toughrani</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Co-Founder & CMO</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper">
-                            <img src="{{ url_for('static', filename='farhan.png') }}" alt="Muhammad Farhan">
-                        </div>
+                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='farhan.png') }}" alt="Muhammad Farhan"></div>
                         <h4 class="font-black text-xl text-slate-800">Muhammad Farhan</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Business Advisor</p>
                     </div>
                     <div class="team-glass-card text-center">
-                        <div class="team-img-wrapper">
-                            <img src="{{ url_for('static', filename='jelly.png') }}" alt="Jelly Montierde">
-                        </div>
+                        <div class="team-img-wrapper"><img src="{{ url_for('static', filename='jelly.png') }}" alt="Jelly Montierde"></div>
                         <h4 class="font-black text-xl text-slate-800">Jelly Montierde</h4>
                         <p class="text-green-600 text-[11px] font-black uppercase tracking-[0.2em] mt-2">Business Advisor</p>
                     </div>
@@ -270,7 +256,7 @@
                         <input type="text" name="name" placeholder="Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <input type="email" name="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <input type="text" name="phone" placeholder="Phone Number" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
-                        <select name="service" id="formServiceSelect" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white appearance-none" required>
+                        <select name="service" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white" required>
                             <option value="" disabled selected>Select a Service</option>
                             <option value="Business Setup">Business Setup & Incorporation</option>
                             <option value="Administrative Services">Administrative Services</option>
@@ -278,10 +264,7 @@
                             <option value="Market Access">Market Access</option>
                         </select>
                         <textarea name="description" placeholder="How can we help you?" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white h-32" required></textarea>
-                        <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition flex items-center justify-center gap-3">
-                            <span id="btnText">SEND MESSAGE</span>
-                            <div id="btnLoader" class="loader hidden"></div>
-                        </button>
+                        <button type="submit" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition">SEND MESSAGE</button>
                     </form>
                 </div>
             </div>
@@ -293,174 +276,47 @@
             <button onclick="closeDetail()" class="flex items-center gap-3 text-slate-400 font-black text-xs uppercase tracking-widest hover:text-green-600 transition mb-12">
                 <i class="fas fa-arrow-left"></i> Back to Main
             </button>
-
             <div class="grid md:grid-cols-2 gap-16 items-start mb-32">
                 <div>
-                    <span id="detail-category" class="text-green-600 font-black text-xs uppercase tracking-[0.3em] mb-4 block">Market Entry</span>
-                    <h2 id="detail-title" class="text-5xl md:text-6xl font-black text-slate-800 leading-tight mb-8">Service Name</h2>
-                    <p id="detail-desc" class="text-xl text-slate-600 leading-relaxed font-medium mb-10">Description will be injected here.</p>
+                    <span id="detail-category" class="text-green-600 font-black text-xs uppercase tracking-[0.3em] mb-4 block"></span>
+                    <h2 id="detail-title" class="text-5xl md:text-6xl font-black text-slate-800 leading-tight mb-8"></h2>
+                    <p id="detail-desc" class="text-xl text-slate-600 leading-relaxed font-medium mb-10"></p>
                     <div class="space-y-4" id="detail-features"></div>
                 </div>
                 <div class="rounded-[3rem] overflow-hidden shadow-3xl border-8 border-slate-50">
                     <img id="detail-img" src="" class="w-full h-[500px] object-cover">
                 </div>
             </div>
-
-            <div class="text-center mb-16">
-                <h3 class="text-3xl font-black uppercase tracking-tighter">Packages & Pricing</h3>
-                <div class="h-1.5 w-16 bg-green-600 mx-auto mt-4 rounded-full"></div>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="pricing-card text-center">
-                    <h5 class="text-2xl font-black mb-6">Essential</h5>
-                    <div class="text-4xl font-black text-green-600 mb-8">$1,500</div>
-                    <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Initial Consultation</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Document Preparation</li>
-                    </ul>
-                    <a href="#get-started" onclick="scrollToForm('Essential')" class="block bg-slate-100 py-4 rounded-xl font-black text-xs hover:bg-green-600 hover:text-white transition">ENQUIRE NOW</a>
-                </div>
-                <div class="pricing-card text-center border-green-500 scale-105 bg-slate-50">
-                    <h5 class="text-2xl font-black mb-6">Growth</h5>
-                    <div class="text-4xl font-black text-green-600 mb-8">$3,500</div>
-                    <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Bank Account Assistance</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Visa Processing</li>
-                    </ul>
-                    <a href="#get-started" onclick="scrollToForm('Growth')" class="block bg-green-600 text-white py-4 rounded-xl font-black text-xs shadow-xl">CHOOSE PLAN</a>
-                </div>
-                <div class="pricing-card text-center">
-                    <h5 class="text-2xl font-black mb-6">Corporate</h5>
-                    <div class="text-4xl font-black text-green-600 mb-8">Custom</div>
-                    <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> IT & Office Setup</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Ongoing PRO Support</li>
-                    </ul>
-                    <a href="#get-started" onclick="scrollToForm('Corporate')" class="block bg-slate-900 text-white py-4 rounded-xl font-black text-xs hover:bg-green-600 transition">CONTACT SALES</a>
-                </div>
-            </div>
         </div>
     </div>
 
-    <footer id="contact" class="bg-slate-900 text-white pt-24 pb-12 px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-                
-                <div class="space-y-6">
-                    <div class="logo-container brightness-0 invert">
-                        <img src="{{ url_for('static', filename='logo.png') }}" alt="Necmergens Logo" class="max-h-12">
-                    </div>
-                    <p class="text-slate-400 text-sm leading-relaxed">
-                        Premium corporate services provider in Dubai, specialized in business setup, administrative solutions, and market entry strategies.
-                    </p>
-                    <div class="flex gap-4">
-                        <a href="https://www.instagram.com/necmergens/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/in/necmergens-corporate-service-provider-0554223a3/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Quick Links</h4>
-                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li><a href="#home" onclick="closeDetail()" class="hover:text-white transition">Home</a></li>
-                        <li><a href="#about" onclick="closeDetail()" class="hover:text-white transition">The Company</a></li>
-                        <li><a href="#services" onclick="closeDetail()" class="hover:text-white transition">Solutions</a></li>
-                        <li><a href="#team" onclick="closeDetail()" class="hover:text-white transition">Our Team</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Services</h4>
-                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                        <li><a href="javascript:void(0)" onclick="openDetail('setup')" class="hover:text-white transition">Business Setup</a></li>
-                        <li><a href="javascript:void(0)" onclick="openDetail('admin')" class="hover:text-white transition">PRO Services</a></li>
-                        <li><a href="javascript:void(0)" onclick="openDetail('it')" class="hover:text-white transition">IT Infrastructure</a></li>
-                        <li><a href="javascript:void(0)" onclick="openDetail('market')" class="hover:text-white transition">Market Access</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Get In Touch</h4>
-                    <ul class="space-y-6 text-slate-400 text-sm">
-                        <li class="flex items-start gap-4">
-                            <i class="fas fa-map-marker-alt text-green-500 mt-1"></i>
-                            <span>XL Tower Room 502 , Marasi Dive, Business Bay,<br>Dubai, United Arab Emirates</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <i class="fas fa-phone-alt text-green-500"></i>
-                            <span>+971523557541</span>
-                        </li>
-                        <li class="flex items-center gap-4">
-                            <i class="fas fa-envelope text-green-500"></i>
-                            <a href="mailto:contact@necmergens.com" class="hover:text-white transition">contact@necmergens.com</a>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-
-            <div class="pt-8 border-t border-white/10 text-center">
-                <p class="text-slate-500 text-[10px] font-black tracking-widest uppercase">
-                    © 2026 NECMERGENS. ALL RIGHTS RESERVED.
-                </p>
-            </div>
+    <footer class="bg-slate-900 text-white pt-24 pb-12 px-8">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-slate-500 text-[10px] font-black tracking-widest uppercase">© 2026 NECMERGENS. ALL RIGHTS RESERVED.</p>
         </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: false, mirror: true });
+        AOS.init({ duration: 1000, once: false });
 
         const serviceData = {
-            setup: {
-                title: "Business Setup & Incorporation",
-                category: "Market Entry",
-                desc: "We provide comprehensive support to establish your legal presence in the UAE with a 100% success rate.",
-                img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp",
-                features: ["Mainland & Free Zone", "Trade License Setup", "Legal Consulting"]
-            },
-            admin: {
-                title: "Administrative & PRO Services",
-                category: "Operations",
-                desc: "Focus on your growth while we handle government approvals, visas, and documentation.",
-                img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
-                features: ["Visa Processing", "Document Attestation", "Government Liaison"]
-            },
-            it: {
-                title: "Technology & IT Services",
-                category: "Innovation",
-                desc: "Full-scale IT infrastructure and digital transformation strategies for new enterprises.",
-                img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-                features: ["IT Setup", "Cloud Solutions", "Cyber Security"]
-            },
-            market: {
-                title: "Market Access & Partnerships",
-                category: "Growth",
-                desc: "Strategic networking and local partnership development in the PAN region.",
-                img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-                features: ["Local Partner Sourcing", "Strategy Consulting", "Market Entry"]
-            }
+            setup: { title: "Business Setup & Incorporation", category: "Market Entry", desc: "Support to establish your legal presence in the UAE.", img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp", features: ["Mainland & Free Zone", "Trade License Setup"] },
+            admin: { title: "Administrative Services", category: "Operations", desc: "Government approvals, visas, and documentation.", img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800", features: ["Visa Processing", "Document Attestation"] },
+            it: { title: "Technology & IT Services", category: "Innovation", desc: "Full-scale IT infrastructure.", img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800", features: ["IT Setup", "Cloud Solutions"] },
+            market: { title: "Market Access & Partnerships", category: "Growth", desc: "Strategic networking and local partnership.", img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800", features: ["Partner Sourcing", "Strategy Consulting"] }
         };
 
         function openDetail(key) {
             const data = serviceData[key];
             document.getElementById('main-page-content').classList.add('hidden-section');
             document.getElementById('service-detail-view').style.display = 'block';
-
             document.getElementById('detail-title').innerText = data.title;
             document.getElementById('detail-category').innerText = data.category;
             document.getElementById('detail-desc').innerText = data.desc;
             document.getElementById('detail-img').src = data.img;
-
             let featuresHtml = '';
-            data.features.forEach(f => {
-                featuresHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`;
-            });
+            data.features.forEach(f => { featuresHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`; });
             document.getElementById('detail-features').innerHTML = featuresHtml;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -469,8 +325,7 @@
             document.getElementById('main-page-content').classList.remove('hidden-section');
             document.getElementById('service-detail-view').style.display = 'none';
         }
-
-        function scrollToForm(planName) {
+       function scrollToForm(planName) {
             closeDetail();
             setTimeout(() => {
                 document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' });
