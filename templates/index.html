@@ -12,7 +12,6 @@
         :root { --primary: #059669; --secondary: #2563eb; }
         ::selection { background: #064e3b; color: #ffffff; }
 
-        /* MODIFIED: APPLE-STYLE STICKY GLASS NAVIGATION */
         .glass-nav { 
             background: rgba(255, 255, 255, 0.7) !important; 
             backdrop-filter: blur(20px) saturate(180%) !important; 
@@ -21,7 +20,6 @@
             transition: all 0.3s ease-in-out;
         }
         
-        /* Optional: Scroll ဆွဲတဲ့အခါ Nav က ပိုကျဉ်းသွားစေချင်ရင် */
         .nav-scrolled { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
 
         .logo-container img { max-height: 55px; width: auto; object-fit: contain; }
@@ -29,7 +27,6 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
-        /* Service Cards Styling - FIXED ALIGNMENT */
         .service-card {
             position: relative;
             height: 450px;
@@ -40,20 +37,30 @@
         .service-card:hover { transform: translateY(-10px); }
         .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .service-card:hover img { transform: scale(1.1); }
+
+        /* FIXED: Font small and box alignment */
         .service-label {
             position: absolute;
             bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             background: white;
-            padding: 10px 15px;
+            padding: 8px 10px;
             border-radius: 8px;
-            font-weight: 700;
-            white-space: nowrap;
+            font-weight: 800;
+            /* Font ကို သေးပေးထားပါတယ် */
+            font-size: 0.7rem; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             color: #1e293b;
-            width: 85%;
+            width: 88%;
             text-align: center;
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 768px) {
+            .service-label { font-size: 0.6rem; width: 92%; padding: 6px 5px; }
+            .service-card { height: 350px; }
         }
 
         /* Partner Slider */
@@ -63,14 +70,13 @@
         .slider .slide { height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; filter: grayscale(100%); opacity: 0.4; transition: 0.5s; }
         .slider .slide:hover { filter: grayscale(0%); opacity: 1; }
 
-        /* Loader Animation */
         .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden { display: none; }
         select option { background-color: #0f172a; color: white; }
     </style>
 </head>
-<body class="bg-[#fcfdfe] text-slate-900">
+<body class="bg-[#fcfdfe] text-slate-900 overflow-x-hidden">
 
     <nav id="mainNav" class="fixed top-0 w-full z-50 glass-nav px-6 md:px-12 py-4 flex justify-between items-center">
         <div class="logo-container">
@@ -169,7 +175,7 @@
     </section>
 
     <section id="services" class="max-w-7xl mx-auto py-32 px-6">
-        <div class="text-center mb-20">
+        <div class="text-center mb-20" data-aos="fade-up">
             <h3 class="text-xs font-black tracking-[0.3em] text-slate-400 uppercase mb-4">What we offer</h3>
             <h2 class="text-5xl font-black uppercase tracking-tighter text-slate-800">Our core consulting services</h2>
             <div class="h-1.5 w-20 bg-green-600 mx-auto mt-6 rounded-full"></div>
@@ -178,20 +184,20 @@
             </p>
         </div>
         
-        <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up">
-            <div class="service-card">
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="service-card" data-aos="zoom-in">
                 <img src="https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp" alt="Business Setup">
                 <div class="service-label">Business Setup & Incorporation</div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
                 <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Administrative Services">
                 <div class="service-label">Administrative Services</div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
                 <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="Technology">
                 <div class="service-label">Technology & IT Services</div>
             </div>
-            <div class="service-card">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
                 <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Market Access">
                 <div class="service-label">Market Access & Partnerships</div>
             </div>
@@ -200,7 +206,7 @@
 
     <section id="team" class="bg-slate-50 py-32 px-6">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
+            <div class="text-center mb-20" data-aos="fade-up">
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">The Leadership</h2>
                 <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
             </div>
@@ -246,7 +252,7 @@
     </section>
 
     <section id="get-started" class="max-w-6xl mx-auto py-24 px-6">
-        <div class="bg-slate-900 rounded-[4rem] p-10 md:p-20 shadow-3xl relative overflow-hidden">
+        <div class="bg-slate-900 rounded-[4rem] p-10 md:p-20 shadow-3xl relative overflow-hidden" data-aos="fade-up">
             <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
                 <div>
                     <h2 class="text-5xl font-black text-white mb-6 leading-tight">Expert Consulting for <span class="text-green-500">Your Business.</span></h2>
@@ -307,9 +313,14 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true });
+        // FIXED: Scroll Up and Down both work now
+        AOS.init({ 
+            duration: 1000, 
+            once: false, 
+            mirror: true, 
+            offset: 50 
+        });
 
-        // MODIFIED: NAV SCROLL EFFECT
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('mainNav');
             if (window.scrollY > 50) {
