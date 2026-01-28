@@ -15,7 +15,6 @@
         .glass-nav { 
             background: rgba(255, 255, 255, 0.7) !important; 
             backdrop-filter: blur(20px) saturate(180%) !important; 
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
             border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
             transition: all 0.3s ease-in-out;
         }
@@ -23,6 +22,8 @@
         .nav-scrolled { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
         .logo-container img { max-height: 55px; width: auto; object-fit: contain; }
         .gradient-text { background: linear-gradient(135deg, #064e3b 0%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn-animate { transition: all 0.3s ease; }
+        .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
         .service-card {
             position: relative;
@@ -37,23 +38,13 @@
         .service-card:hover img { transform: scale(1.1); }
 
         .service-label {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: white;
-            padding: 8px 10px;
-            border-radius: 8px;
-            font-weight: 800;
-            font-size: 0.7rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            color: #1e293b;
-            width: 88%;
-            text-align: center;
-            text-transform: uppercase;
+            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+            background: white; padding: 8px 10px; border-radius: 8px;
+            font-weight: 800; font-size: 0.7rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: #1e293b; width: 88%; text-align: center; text-transform: uppercase;
         }
 
-        /* NEW: Detail View Animation */
+        /* Detail View Styling */
         #service-detail-view { display: none; }
         .pricing-card { border: 1px solid #e2e8f0; border-radius: 2rem; padding: 2.5rem; transition: 0.3s; background: white; }
         .pricing-card:hover { border-color: #059669; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(5,150,105,0.1); }
@@ -67,7 +58,7 @@
 
         .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        .hidden { display: none; }
+        .hidden-section { display: none !important; }
     </style>
 </head>
 <body class="bg-[#fcfdfe] text-slate-900 overflow-x-hidden">
@@ -82,10 +73,10 @@
             <a href="#services" onclick="closeDetail()" class="hover:text-green-600 transition">Solutions</a>
             <a href="#team" onclick="closeDetail()" class="hover:text-green-600 transition">Our Team</a>
         </div>
-        <a href="#get-started" class="bg-slate-900 text-white px-8 py-3 rounded-full text-[10px] font-black tracking-widest">BOOK CONSULTATION</a>
+        <a href="#get-started" onclick="closeDetail()" class="bg-slate-900 text-white px-8 py-3 rounded-full text-[10px] font-black tracking-widest btn-animate">BOOK CONSULTATION</a>
     </nav>
 
-    <div id="main-sections">
+    <div id="main-page-content">
         <section id="home" class="relative pt-64 pb-44 px-6 min-h-[90vh] flex items-center bg-slate-900 overflow-hidden">
             <div class="absolute inset-0 z-0">
                 <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-40">
@@ -97,9 +88,50 @@
                     Business Setup <br> <span class="gradient-text">Innovation</span>
                 </h1>
                 <p class="text-xl text-slate-200 max-w-4xl mx-auto leading-relaxed mb-12 font-medium italic">
-                    "NECMERGENS provides end-to-end market entry services for international companies."
+                    "NECMERGENS provides end-to-end market entry services for international companies - from business setup and banking to accounting management, IT infrastructure, and local partnership development."
                 </p>
-                <a href="#get-started" class="bg-green-600 text-white px-12 py-5 rounded-2xl font-bold text-lg shadow-2xl">Connect With Experts</a>
+                <div class="bg-white/10 backdrop-blur-md p-4 rounded-2xl inline-block border border-white/20 mb-12">
+                    <p class="text-green-400 text-sm font-bold tracking-widest uppercase">We speak: French, Hindi, Arabic, English</p>
+                </div>
+                <br>
+                <a href="#get-started" class="bg-green-600 text-white px-12 py-5 rounded-2xl font-bold text-lg btn-animate shadow-2xl">Connect With Experts</a>
+            </div>
+        </section>
+
+        <section id="partners" class="py-20 bg-white">
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide"><i class="fab fa-cc-visa text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-cc-mastercard text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-fedex text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-dhl text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-microsoft text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-cc-visa text-5xl"></i></div>
+                    <div class="slide"><i class="fab fa-cc-mastercard text-5xl"></i></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-32 px-6">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800 mb-6">Expertise Driven by <span class="text-green-600">Vision</span></h2>
+                    <div class="h-1.5 w-20 bg-green-600 mb-10 rounded-full"></div>
+                    <p class="text-lg text-slate-700 leading-relaxed mb-8">Necmergens specializes in bridging cultures and business landscapes for international companies.</p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                            <h4 class="font-black text-green-600 text-2xl">100%</h4>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Success Rate</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+                            <h4 class="font-black text-blue-600 text-2xl">Global</h4>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Network</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative" data-aos="fade-left">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" class="rounded-[3.5rem] shadow-3xl border-8 border-white">
+                </div>
             </div>
         </section>
 
@@ -107,44 +139,84 @@
             <div class="text-center mb-20" data-aos="fade-up">
                 <h3 class="text-xs font-black tracking-[0.3em] text-slate-400 uppercase mb-4">What we offer</h3>
                 <h2 class="text-5xl font-black uppercase tracking-tighter text-slate-800">Our core consulting services</h2>
-                <div class="h-1.5 w-20 bg-green-600 mx-auto mt-6 rounded-full"></div>
             </div>
             
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="service-card" data-aos="zoom-in" onclick="showDetail('setup')">
+                <div class="service-card" data-aos="zoom-in" onclick="openDetail('setup')">
                     <img src="https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp" alt="Business Setup">
                     <div class="service-label">Business Setup & Incorporation</div>
                 </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100" onclick="showDetail('admin')">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="100" onclick="openDetail('admin')">
                     <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Administrative Services">
                     <div class="service-label">Administrative Services</div>
                 </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200" onclick="showDetail('it')">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="200" onclick="openDetail('it')">
                     <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="Technology">
                     <div class="service-label">Technology & IT Services</div>
                 </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300" onclick="showDetail('market')">
+                <div class="service-card" data-aos="zoom-in" data-aos-delay="300" onclick="openDetail('market')">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Market Access">
                     <div class="service-label">Market Access & Partnerships</div>
                 </div>
             </div>
         </section>
-        
-        </div>
 
-    <div id="service-detail-view" class="pt-32 pb-24 px-6 md:px-12 bg-white">
+        <section id="team" class="bg-slate-50 py-32 px-6">
+            <div class="max-w-7xl mx-auto text-center mb-20">
+                <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">The Leadership</h2>
+                <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+                <div class="text-center group">
+                    <div class="w-44 h-44 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                        <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition">
+                    </div>
+                    <h4 class="font-black text-lg">Fathi Sakhri</h4>
+                    <p class="text-green-600 text-[10px] font-black uppercase">Co-Founder & CEO</p>
+                </div>
+                </div>
+        </section>
+
+        <section id="get-started" class="max-w-6xl mx-auto py-24 px-6">
+            <div class="bg-slate-900 rounded-[4rem] p-10 md:p-20 shadow-3xl relative overflow-hidden">
+                <div class="relative z-10 grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black text-white mb-6 leading-tight">Expert Consulting for <span class="text-green-500">Your Business.</span></h2>
+                        <p class="text-slate-400 text-lg">Get a customized market entry strategy today.</p>
+                    </div>
+                    <form id="inquiryForm" class="flex flex-col gap-5">
+                        <input type="text" name="name" placeholder="Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
+                        <input type="email" name="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
+                        <select name="service" id="formServiceSelect" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white appearance-none" required>
+                            <option value="" disabled selected>Select a Service</option>
+                            <option value="Business Setup">Business Setup & Incorporation</option>
+                            <option value="Administrative Services">Administrative Services</option>
+                            <option value="IT Infrastructure">IT Infrastructure</option>
+                            <option value="Market Access">Market Access</option>
+                        </select>
+                        <textarea name="description" placeholder="How can we help you?" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white h-32" required></textarea>
+                        <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition flex items-center justify-center gap-3">
+                            <span id="btnText">SEND MESSAGE</span>
+                            <div id="btnLoader" class="loader hidden"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="service-detail-view" class="pt-32 pb-24 px-6 md:px-12 bg-white min-h-screen">
         <div class="max-w-7xl mx-auto">
             <button onclick="closeDetail()" class="flex items-center gap-3 text-slate-400 font-black text-xs uppercase tracking-widest hover:text-green-600 transition mb-12">
-                <i class="fas fa-arrow-left"></i> Back to Home
+                <i class="fas fa-arrow-left"></i> Back to Main
             </button>
 
             <div class="grid md:grid-cols-2 gap-16 items-start mb-32">
                 <div>
                     <span id="detail-category" class="text-green-600 font-black text-xs uppercase tracking-[0.3em] mb-4 block">Market Entry</span>
-                    <h2 id="detail-title" class="text-5xl md:text-6xl font-black text-slate-800 leading-tight mb-8">Business Setup</h2>
-                    <p id="detail-desc" class="text-xl text-slate-600 leading-relaxed font-medium mb-10">Detailed information about the service will appear here.</p>
-                    <div class="space-y-4" id="detail-features">
-                        </div>
+                    <h2 id="detail-title" class="text-5xl md:text-6xl font-black text-slate-800 leading-tight mb-8">Service Name</h2>
+                    <p id="detail-desc" class="text-xl text-slate-600 leading-relaxed font-medium mb-10">Description will be injected here.</p>
+                    <div class="space-y-4" id="detail-features"></div>
                 </div>
                 <div class="rounded-[3rem] overflow-hidden shadow-3xl border-8 border-slate-50">
                     <img id="detail-img" src="" class="w-full h-[500px] object-cover">
@@ -157,103 +229,127 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="pricing-card">
-                    <h4 class="text-xs font-black text-slate-400 uppercase mb-4 tracking-widest">Starter</h4>
+                <div class="pricing-card text-center">
                     <h5 class="text-2xl font-black mb-6">Essential</h5>
-                    <div class="text-4xl font-black text-green-600 mb-8">$1,500 <span class="text-sm text-slate-400 font-medium">/One-time</span></div>
+                    <div class="text-4xl font-black text-green-600 mb-8">$1,500</div>
                     <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
                         <li><i class="fas fa-check text-green-500 mr-2"></i> Initial Consultation</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i> Document Preparation</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> License Application</li>
                     </ul>
-                    <a href="#get-started" onclick="closeDetail()" class="block text-center bg-slate-100 py-4 rounded-xl font-black text-xs hover:bg-green-600 hover:text-white transition">ENQUIRE NOW</a>
+                    <a href="#get-started" onclick="scrollToForm('Essential')" class="block bg-slate-100 py-4 rounded-xl font-black text-xs hover:bg-green-600 hover:text-white transition">ENQUIRE NOW</a>
                 </div>
-                <div class="pricing-card border-green-500 ring-4 ring-green-50">
-                    <span class="bg-green-600 text-white px-4 py-1 rounded-full text-[10px] font-black uppercase mb-4 inline-block tracking-tighter">Most Popular</span>
+                <div class="pricing-card text-center border-green-500 scale-105 bg-slate-50">
                     <h5 class="text-2xl font-black mb-6">Growth</h5>
-                    <div class="text-4xl font-black text-green-600 mb-8">$3,500 <span class="text-sm text-slate-400 font-medium">/One-time</span></div>
+                    <div class="text-4xl font-black text-green-600 mb-8">$3,500</div>
                     <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Everything in Essential</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i> Bank Account Assistance</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i> Visa Processing</li>
                     </ul>
-                    <a href="#get-started" onclick="closeDetail()" class="block text-center bg-green-600 text-white py-4 rounded-xl font-black text-xs shadow-xl">CHOOSE PLAN</a>
+                    <a href="#get-started" onclick="scrollToForm('Growth')" class="block bg-green-600 text-white py-4 rounded-xl font-black text-xs shadow-xl">CHOOSE PLAN</a>
                 </div>
-                <div class="pricing-card">
-                    <h4 class="text-xs font-black text-slate-400 uppercase mb-4 tracking-widest">Enterprise</h4>
-                    <h5 class="text-2xl font-black mb-6">Premium</h5>
+                <div class="pricing-card text-center">
+                    <h5 class="text-2xl font-black mb-6">Corporate</h5>
                     <div class="text-4xl font-black text-green-600 mb-8">Custom</div>
                     <ul class="space-y-4 mb-10 text-slate-500 font-bold text-sm">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Full Operational Readiness</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i> IT & Office Setup</li>
                         <li><i class="fas fa-check text-green-500 mr-2"></i> Ongoing PRO Support</li>
                     </ul>
-                    <a href="#get-started" onclick="closeDetail()" class="block text-center bg-slate-900 text-white py-4 rounded-xl font-black text-xs hover:bg-green-600 transition">CONTACT SALES</a>
+                    <a href="#get-started" onclick="scrollToForm('Corporate')" class="block bg-slate-900 text-white py-4 rounded-xl font-black text-xs hover:bg-green-600 transition">CONTACT SALES</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <footer id="contact" class="bg-white pt-24 pb-12 px-8 border-t border-slate-100">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-slate-400 text-[10px] font-black tracking-widest">© 2026 NECMERGENS. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: false, mirror: true });
 
+        // Content Data
         const serviceData = {
             setup: {
                 title: "Business Setup & Incorporation",
                 category: "Market Entry",
-                desc: "We provide comprehensive support for entrepreneurs and companies to establish their legal presence in the UAE with 100% success rate.",
+                desc: "We provide comprehensive support to establish your legal presence in the UAE with a 100% success rate.",
                 img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp",
-                features: ["Free Zone & Mainland Setup", "Trade License Procurement", "Legal Documentation"]
+                features: ["Mainland & Free Zone", "Trade License Setup", "Legal Consulting"]
             },
             admin: {
                 title: "Administrative & PRO Services",
                 category: "Operations",
-                desc: "Focus on your business growth while we handle the paperwork, government approvals, and employee visa processing seamlessly.",
+                desc: "Focus on your growth while we handle government approvals, visas, and documentation.",
                 img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
-                features: ["Corporate PRO Services", "Employee Visa Processing", "Document Attestation"]
+                features: ["Visa Processing", "Document Attestation", "Government Liaison"]
             },
             it: {
                 title: "Technology & IT Services",
                 category: "Innovation",
-                desc: "Digital transformation for the modern age. We set up your IT infrastructure, cloud solutions, and security from day one.",
+                desc: "Full-scale IT infrastructure and digital transformation strategies for new enterprises.",
                 img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-                features: ["IT Infrastructure Setup", "Cloud Management", "Cyber Security"]
+                features: ["IT Setup", "Cloud Solutions", "Cyber Security"]
             },
             market: {
                 title: "Market Access & Partnerships",
                 category: "Growth",
-                desc: "Bridging the gap between your brand and the MENA market through strategic local networking and partnership development.",
+                desc: "Strategic networking and local partnership development in the MENA region.",
                 img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-                features: ["Local Partner Sourcing", "Market Entry Strategy", "Business Networking"]
+                features: ["Local Partner Sourcing", "Strategy Consulting", "Market Entry"]
             }
         };
 
-        function showDetail(key) {
+        function openDetail(key) {
             const data = serviceData[key];
-            document.getElementById('main-sections').classList.add('hidden');
-            const view = document.getElementById('service-detail-view');
-            view.style.display = 'block';
+            document.getElementById('main-page-content').classList.add('hidden-section');
+            document.getElementById('service-detail-view').style.display = 'block';
 
             document.getElementById('detail-title').innerText = data.title;
             document.getElementById('detail-category').innerText = data.category;
             document.getElementById('detail-desc').innerText = data.desc;
             document.getElementById('detail-img').src = data.img;
 
-            let featureHtml = '';
+            let featuresHtml = '';
             data.features.forEach(f => {
-                featureHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`;
+                featuresHtml += `<p class="flex items-center gap-4 text-slate-700 font-bold"><i class="fas fa-check-circle text-green-500"></i> ${f}</p>`;
             });
-            document.getElementById('detail-features').innerHTML = featureHtml;
-
+            document.getElementById('detail-features').innerHTML = featuresHtml;
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         function closeDetail() {
-            document.getElementById('main-sections').classList.remove('hidden');
+            document.getElementById('main-page-content').classList.remove('hidden-section');
             document.getElementById('service-detail-view').style.display = 'none';
-            window.scrollTo({ top: document.getElementById('services').offsetTop - 100, behavior: 'smooth' });
         }
+
+        function scrollToForm(planName) {
+            closeDetail();
+            setTimeout(() => {
+                document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' });
+                // Automatically select service in form
+                const select = document.getElementById('formServiceSelect');
+                const detailTitle = document.getElementById('detail-title').innerText;
+                
+                // Try to match the selected service in form
+                for (let i = 0; i < select.options.length; i++) {
+                    if (detailTitle.includes(select.options[i].value)) {
+                        select.selectedIndex = i;
+                        break;
+                    }
+                }
+                
+                // Add note to textarea
+                document.querySelector('textarea[name="description"]').value = `I am interested in the ${planName} package for ${detailTitle}.`;
+            }, 300);
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            window.scrollY > 50 ? nav.classList.add('nav-scrolled') : nav.classList.remove('nav-scrolled');
+        });
     </script>
 </body>
 </html>
