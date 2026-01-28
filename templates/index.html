@@ -18,7 +18,7 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
-        /* Image Service Cards Styling */
+        /* Service Cards Styling */
         .service-card {
             position: relative;
             height: 450px;
@@ -40,15 +40,20 @@
             font-weight: 700;
             white-space: nowrap;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            color: #1e293b;
+            width: 85%;
+            text-align: center;
         }
 
+        /* Partner Slider */
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
         .slider { height: 120px; margin: auto; overflow: hidden; position: relative; width: auto; }
         .slider .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
         .slider .slide { height: 100px; width: 250px; display: flex; align-items: center; justify-content: center; filter: grayscale(100%); opacity: 0.4; transition: 0.5s; }
         .slider .slide:hover { filter: grayscale(0%); opacity: 1; }
 
-        .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; }
+        /* Loader Animation */
+        .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden { display: none; }
         select option { background-color: #0f172a; color: white; }
@@ -143,10 +148,6 @@
                         <i class="fab fa-linkedin text-3xl"></i>
                         <span class="text-sm">linkedin.com/in/necmergens-corporate</span>
                     </a>
-                    <a href="https://necmergens.com" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-green-600 transition font-bold">
-                        <i class="fas fa-globe text-2xl"></i>
-                        <span class="text-sm">necmergens.com</span>
-                    </a>
                 </div>
             </div>
             <div class="relative" data-aos="fade-left">
@@ -162,13 +163,13 @@
             <h2 class="text-5xl font-black uppercase tracking-tighter text-slate-800">Our core consulting services</h2>
             <div class="h-1.5 w-20 bg-green-600 mx-auto mt-6 rounded-full"></div>
             <p class="mt-8 text-slate-600 font-medium max-w-3xl mx-auto text-lg leading-relaxed">
-                We provide comprehensive market entry services in English, French, Hindi, and Arabic to help international companies establish operations, connect with partners, and achieve sustainable growth in UAE and MENA.
+                We provide comprehensive market entry services in English, French, Hindi, and Arabic to help international companies establish operations.
             </p>
         </div>
         
         <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up">
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1573164067507-40e1d6a9bc9c?auto=format&fit=crop&q=80&w=600" alt="Business Setup">
+                <img src="https://images.unsplash.com/photo-1573163281530-5bd9a88fb675?auto=format&fit=crop&q=80&w=600" alt="Business Setup">
                 <div class="service-label">Business Setup & Incorporation</div>
             </div>
             <div class="service-card">
@@ -195,7 +196,6 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12" data-aos="zoom-in">
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -205,7 +205,6 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='nadia.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -215,7 +214,6 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='farhan.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -225,7 +223,6 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='jelly.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -256,12 +253,11 @@
                         <option value="IT Infrastructure">IT Infrastructure</option>
                         <option value="Market Access">Market Access</option>
                         <option value="PRO Services">PRO & Government</option>
-                        <option value="Financial Advisory">Financial Advisory</option>
                     </select>
 
                     <textarea name="description" placeholder="How can we help you?" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white h-32 focus:outline-none focus:border-green-500 transition-all" required></textarea>
                     
-                    <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition-all">
+                    <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition-all flex items-center justify-center gap-3">
                         <span id="btnText">SEND MESSAGE</span>
                         <div id="btnLoader" class="loader hidden"></div>
                     </button>
@@ -301,25 +297,54 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+
         const form = document.getElementById('inquiryForm');
+        const btn = document.getElementById('submitBtn');
+        const btnText = document.getElementById('btnText');
+        const btnLoader = document.getElementById('btnLoader');
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const btn = document.getElementById('submitBtn');
-            const btnText = document.getElementById('btnText');
+            
+            // UI State Change
             btn.disabled = true;
             btnText.innerText = "Processing...";
+            btnLoader.classList.remove('hidden');
+
             const formData = new FormData(form);
+            
             try {
-                const response = await fetch('/get-started', { method: 'POST', body: formData });
+                // Ensure your server is listening for POST at /get-started
+                const response = await fetch('/get-started', { 
+                    method: 'POST', 
+                    body: formData 
+                });
+
                 if (response.ok) {
-                    Swal.fire({ title: 'Success', text: 'Message Sent Successfully!', icon: 'success', confirmButtonColor: '#059669' });
+                    // "Thank You" Success Box
+                    Swal.fire({
+                        title: 'Thank you for your message!',
+                        text: 'We will contact you soon.',
+                        icon: 'success',
+                        confirmButtonColor: '#059669',
+                        confirmButtonText: 'Great!'
+                    });
                     form.reset();
+                } else {
+                    throw new Error('Server returned an error');
                 }
             } catch (err) {
-                Swal.fire('Error', 'Submission failed.', 'error');
+                Swal.fire({
+                    title: 'Submission Error',
+                    text: 'Please check your connection and try again.',
+                    icon: 'error',
+                    confirmButtonColor: '#ef4444'
+                });
             } finally {
+                // Reset Button State
                 btn.disabled = false;
                 btnText.innerText = "SEND MESSAGE";
+                btnLoader.classList.add('hidden');
             }
         });
     </script>
