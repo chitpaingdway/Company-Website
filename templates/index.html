@@ -293,73 +293,73 @@
     </div>
 
     <footer id="contact" class="bg-slate-900 text-white pt-24 pb-12 px-8">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-            
-            <div class="space-y-6">
-                <div class="logo-container brightness-0 invert">
-                    <img src="{{ url_for('static', filename='logo.png') }}" alt="Necmergens Logo" class="max-h-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                
+                <div class="space-y-6">
+                    <div class="logo-container brightness-0 invert">
+                        <img src="{{ url_for('static', filename='logo.png') }}" alt="Necmergens Logo" class="max-h-12">
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Premium corporate services provider in Dubai, specialized in business setup, administrative solutions, and market entry strategies.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/necmergens/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/necmergens-corporate-service-provider-0554223a3/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Premium corporate services provider in Dubai, specialized in business setup, administrative solutions, and market entry strategies.
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Quick Links</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="#home" onclick="closeDetail()" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#about" onclick="closeDetail()" class="hover:text-white transition">The Company</a></li>
+                        <li><a href="#services" onclick="closeDetail()" class="hover:text-white transition">Solutions</a></li>
+                        <li><a href="#team" onclick="closeDetail()" class="hover:text-white transition">Our Team</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Services</h4>
+                    <ul class="space-y-4 text-slate-400 text-sm font-medium">
+                        <li><a href="javascript:void(0)" onclick="openDetail('setup')" class="hover:text-white transition">Business Setup</a></li>
+                        <li><a href="javascript:void(0)" onclick="openDetail('admin')" class="hover:text-white transition">PRO Services</a></li>
+                        <li><a href="javascript:void(0)" onclick="openDetail('it')" class="hover:text-white transition">IT Infrastructure</a></li>
+                        <li><a href="javascript:void(0)" onclick="openDetail('market')" class="hover:text-white transition">Market Access</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Get In Touch</h4>
+                    <ul class="space-y-6 text-slate-400 text-sm">
+                        <li class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-green-500 mt-1"></i>
+                            <span>XL Tower Room 502 , Marasi Dive, Business Bay,<br>Dubai, United Arab Emirates</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-phone-alt text-green-500"></i>
+                            <span>+971523557541</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-envelope text-green-500"></i>
+                            <a href="mailto:contact@necmergens.com" class="hover:text-white transition">contact@necmergens.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-center">
+                <p class="text-slate-500 text-[10px] font-black tracking-widest uppercase">
+                    © 2026 NECMERGENS. ALL RIGHTS RESERVED.
                 </p>
-                <div class="flex gap-4">
-                    <a href="https://www.instagram.com/necmergens/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/necmergens-corporate-service-provider-0554223a3/" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-green-600 transition duration-300 text-xl">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                </div>
             </div>
-
-            <div>
-                <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Quick Links</h4>
-                <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                    <li><a href="#home" onclick="closeDetail()" class="hover:text-white transition">Home</a></li>
-                    <li><a href="#about" onclick="closeDetail()" class="hover:text-white transition">The Company</a></li>
-                    <li><a href="#services" onclick="closeDetail()" class="hover:text-white transition">Solutions</a></li>
-                    <li><a href="#team" onclick="closeDetail()" class="hover:text-white transition">Our Team</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Services</h4>
-                <ul class="space-y-4 text-slate-400 text-sm font-medium">
-                    <li><a href="javascript:void(0)" onclick="openDetail('setup')" class="hover:text-white transition">Business Setup</a></li>
-                    <li><a href="javascript:void(0)" onclick="openDetail('admin')" class="hover:text-white transition">PRO Services</a></li>
-                    <li><a href="javascript:void(0)" onclick="openDetail('it')" class="hover:text-white transition">IT Infrastructure</a></li>
-                    <li><a href="javascript:void(0)" onclick="openDetail('market')" class="hover:text-white transition">Market Access</a></li>
-                </ul>
-            </div>
-
-            <div>
-                <h4 class="text-lg font-bold mb-8 uppercase tracking-widest text-green-500">Get In Touch</h4>
-                <ul class="space-y-6 text-slate-400 text-sm">
-                    <li class="flex items-start gap-4">
-                        <i class="fas fa-map-marker-alt text-green-500 mt-1"></i>
-                        <span>XL Tower Room 502 , Marasi Dive, Business Bay,<br>Dubai, United Arab Emirates</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <i class="fas fa-phone-alt text-green-500"></i>
-                        <span>+971523557541</span>
-                    </li>
-                    <li class="flex items-center gap-4">
-                        <i class="fas fa-envelope text-green-500"></i>
-                        <a href="mailto:contact@necmergens.com" class="hover:text-white transition">contact@necmergens.com</a>
-                    </li>
-                </ul>
-            </div>
-
         </div>
-
-        <div class="pt-8 border-t border-white/10 text-center">
-            <p class="text-slate-500 text-[10px] font-black tracking-widest uppercase">
-                © 2026 NECMERGENS. ALL RIGHTS RESERVED.
-            </p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
@@ -390,7 +390,7 @@
             market: {
                 title: "Market Access & Partnerships",
                 category: "Growth",
-                desc: "Strategic networking and local partnership development in the MENA region.",
+                desc: "Strategic networking and local partnership development in the PAN region.",
                 img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
                 features: ["Local Partner Sourcing", "Strategy Consulting", "Market Entry"]
             }
@@ -441,16 +441,13 @@
             window.scrollY > 50 ? nav.classList.add('nav-scrolled') : nav.classList.remove('nav-scrolled');
         });
 
-        // --- Inquiry Form Submission Logic ---
         document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            
             const btn = document.getElementById('submitBtn');
             const btnText = document.getElementById('btnText');
             const loader = document.getElementById('btnLoader');
             const formData = new FormData(this);
 
-            // UI Update
             btn.disabled = true;
             btnText.innerText = "SENDING...";
             loader.classList.remove('hidden');
@@ -460,26 +457,13 @@
                     method: 'POST',
                     body: formData
                 });
-
                 const result = await response.json();
-
                 if (result.status === 'success') {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Success!',
-                        text: 'Your message has been sent successfully.',
-                        confirmButtonColor: '#059669'
-                    });
+                    Swal.fire({ icon: 'success', title: 'Success!', text: 'Your message has been sent.', confirmButtonColor: '#059669' });
                     this.reset();
-                } else {
-                    throw new Error('Server error');
-                }
+                } else { throw new Error('Server error'); }
             } catch (error) {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    text: 'Something went wrong. Please try again later.',
-                });
+                Swal.fire({ icon: 'error', title: 'Oops...', text: 'Something went wrong.' });
             } finally {
                 btn.disabled = false;
                 btnText.innerText = "SEND MESSAGE";
