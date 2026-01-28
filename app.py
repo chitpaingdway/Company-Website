@@ -22,7 +22,7 @@ def send_reply_to_client(user_data):
     <body style="font-family: 'Segoe UI', Arial, sans-serif; color: #334155; line-height: 1.6;">
         <div style="max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
             <div style="background-color: #0f172a; padding: 25px; text-align: center;">
-                <img src="https://www.necmergens.com/static/logo.png" alt="Necmergens" style="max-height: 50px;">
+                <img src=/static/logo.png" alt="Necmergens" style="max-height: 50px;">
             </div>
             <div style="padding: 40px; background: white;">
                 <h2 style="color: #059669; margin-top: 0;">Hello {user_data['name']},</h2>
