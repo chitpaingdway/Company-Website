@@ -12,7 +12,18 @@
         :root { --primary: #059669; --secondary: #2563eb; }
         ::selection { background: #064e3b; color: #ffffff; }
 
-        .glass-nav { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        /* MODIFIED: APPLE-STYLE STICKY GLASS NAVIGATION */
+        .glass-nav { 
+            background: rgba(255, 255, 255, 0.7) !important; 
+            backdrop-filter: blur(20px) saturate(180%) !important; 
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+            transition: all 0.3s ease-in-out;
+        }
+        
+        /* Optional: Scroll ဆွဲတဲ့အခါ Nav က ပိုကျဉ်းသွားစေချင်ရင် */
+        .nav-scrolled { padding-top: 0.5rem !important; padding-bottom: 0.5rem !important; }
+
         .logo-container img { max-height: 55px; width: auto; object-fit: contain; }
         .gradient-text { background: linear-gradient(135deg, #064e3b 0%, #2563eb 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .btn-animate { transition: all 0.3s ease; }
@@ -33,7 +44,7 @@
             position: absolute;
             bottom: 20px;
             left: 50%;
-            transform: translateX(-50%); /* This centers the text exactly */
+            transform: translateX(-50%);
             background: white;
             padding: 10px 15px;
             border-radius: 8px;
@@ -61,7 +72,7 @@
 </head>
 <body class="bg-[#fcfdfe] text-slate-900">
 
-    <nav class="fixed top-0 w-full z-50 glass-nav px-6 md:px-12 py-4 flex justify-between items-center">
+    <nav id="mainNav" class="fixed top-0 w-full z-50 glass-nav px-6 md:px-12 py-4 flex justify-between items-center">
         <div class="logo-container">
             <a href="#home"><img src="{{ url_for('static', filename='logo.png') }}" alt="Necmergens Logo"></a>
         </div>
@@ -297,6 +308,16 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 1000, once: true });
+
+        // MODIFIED: NAV SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('mainNav');
+            if (window.scrollY > 50) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
 
         const form = document.getElementById('inquiryForm');
         const btn = document.getElementById('submitBtn');
