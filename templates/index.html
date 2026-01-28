@@ -18,7 +18,7 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
-        /* Service Cards Styling */
+        /* Service Cards Styling - FIXED ALIGNMENT */
         .service-card {
             position: relative;
             height: 450px;
@@ -33,9 +33,9 @@
             position: absolute;
             bottom: 20px;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%); /* This centers the text exactly */
             background: white;
-            padding: 10px 20px;
+            padding: 10px 15px;
             border-radius: 8px;
             font-weight: 700;
             white-space: nowrap;
@@ -169,19 +169,19 @@
         
         <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up">
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1573163281530-5bd9a88fb675?auto=format&fit=crop&q=80&w=600" alt="Business Setup">
+                <img src="https://images.unsplash.com/photo-1573163281530-5bd9a88fb675?auto=format&fit=crop&q=80&w=800" alt="Business Setup">
                 <div class="service-label">Business Setup & Incorporation</div>
             </div>
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" alt="Administrative Services">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Administrative Services">
                 <div class="service-label">Administrative Services</div>
             </div>
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Technology">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800" alt="Technology">
                 <div class="service-label">Technology & IT Services</div>
             </div>
             <div class="service-card">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Market Access">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Market Access">
                 <div class="service-label">Market Access & Partnerships</div>
             </div>
         </div>
@@ -305,8 +305,6 @@
 
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            // UI State Change
             btn.disabled = true;
             btnText.innerText = "Processing...";
             btnLoader.classList.remove('hidden');
@@ -314,14 +312,12 @@
             const formData = new FormData(form);
             
             try {
-                // Ensure your server is listening for POST at /get-started
                 const response = await fetch('/get-started', { 
                     method: 'POST', 
                     body: formData 
                 });
 
                 if (response.ok) {
-                    // "Thank You" Success Box
                     Swal.fire({
                         title: 'Thank you for your message!',
                         text: 'We will contact you soon.',
@@ -341,7 +337,6 @@
                     confirmButtonColor: '#ef4444'
                 });
             } finally {
-                // Reset Button State
                 btn.disabled = false;
                 btnText.innerText = "SEND MESSAGE";
                 btnLoader.classList.add('hidden');
