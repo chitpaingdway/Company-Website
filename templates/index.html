@@ -27,40 +27,43 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
+        /* NEW STYLING MATCHING SERVICE-DETAIL PAGE */
         .service-card {
             position: relative;
-            height: 450px;
-            border-radius: 1.5rem;
+            height: 480px;
+            border-radius: 2rem;
             overflow: hidden;
-            transition: transform 0.5s ease;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
         }
-        .service-card:hover { transform: translateY(-10px); }
-        .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .service-card:hover { transform: translateY(-12px); box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); }
+        .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
         .service-card:hover img { transform: scale(1.1); }
 
-        /* FIXED: Font small and box alignment */
         .service-label {
             position: absolute;
-            bottom: 20px;
+            bottom: 25px;
             left: 50%;
             transform: translateX(-50%);
             background: white;
-            padding: 8px 10px;
-            border-radius: 8px;
+            padding: 12px 15px;
+            border-radius: 12px;
             font-weight: 800;
-            /* Font ကို သေးပေးထားပါတယ် */
-            font-size: 0.7rem; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 0.75rem; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             color: #1e293b;
-            width: 88%;
+            width: 85%;
             text-align: center;
             line-height: 1.2;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
         }
+        .service-card:hover .service-label { background: #059669; color: white; }
 
         @media (max-width: 768px) {
-            .service-label { font-size: 0.6rem; width: 92%; padding: 6px 5px; }
-            .service-card { height: 350px; }
+            .service-label { font-size: 0.65rem; width: 90%; padding: 10px 8px; }
+            .service-card { height: 400px; }
         }
 
         /* Partner Slider */
@@ -185,20 +188,20 @@
         </div>
         
         <div class="grid md:grid-cols-4 gap-6">
-            <div class="service-card" data-aos="zoom-in">
-                <img src="https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp" alt="Business Setup">
+            <div class="service-card" data-aos="zoom-in" onclick="location.href='https://www.necmergens.com/service-detail'">
+                <img src="https://images.unsplash.com/photo-1573164067047-0ad2c18a20ee?auto=format&fit=crop&q=80&w=800" alt="Business Setup">
                 <div class="service-label">Business Setup & Incorporation</div>
             </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
-                <img src="https://www.shutterstock.com/image-photo/businessman-technology-digital-interface-word-600nw-2479652719.jpg" alt="Administrative Services">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="100" onclick="location.href='https://www.necmergens.com/service-detail'">
+                <img src="https://images.unsplash.com/photo-1454165833767-02754a70a011?auto=format&fit=crop&q=80&w=800" alt="Administrative Services">
                 <div class="service-label">Administrative Services</div>
             </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://www.maxxcomtech.com/assets/images/services/Data-&-Managed-Network-Services.jpg" alt="Technology">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="200" onclick="location.href='https://www.necmergens.com/service-detail'">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800" alt="Technology">
                 <div class="service-label">Technology & IT Services</div>
             </div>
-            <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
-                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Market Access">
+            <div class="service-card" data-aos="zoom-in" data-aos-delay="300" onclick="location.href='https://www.necmergens.com/service-detail'">
+                <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&q=80&w=800" alt="Market Access">
                 <div class="service-label">Market Access & Partnerships</div>
             </div>
         </div>
@@ -313,7 +316,6 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // FIXED: Scroll Up and Down both work now
         AOS.init({ 
             duration: 1000, 
             once: false, 
