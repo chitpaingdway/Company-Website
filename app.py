@@ -1,6 +1,8 @@
 import smtplib
+import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+from email.mime.image import MIMEImage
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
@@ -11,18 +13,19 @@ def send_reply_to_client(user_data):
     sender_password = "uygdjuldmiwdfhbh" 
     client_email = user_data['email']
 
-    msg = MIMEMultipart('alternative')
+    # Changed to 'related' to allow embedding the image file directly
+    msg = MIMEMultipart('related')
     msg['Subject'] = "Thank you for contacting Necmergens"
     msg['From'] = f"Necmergens Corporate <{sender_email}>"
     msg['To'] = client_email
 
-    # The template for the client (includes logo and signature)
+    # The template for the client (using cid:logo_image for the embedded logo)
     html_content = f"""
     <html>
     <body style="font-family: 'Segoe UI', Arial, sans-serif; color: #334155; line-height: 1.6;">
         <div style="max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
             <div style="background-color: #0f172a; padding: 25px; text-align: center;">
-                <img src=/static/logo.png" alt="Necmergens" style="max-height: 50px;">
+                <img src="cid:logo_image" alt="Necmergens" style="max-height: 50px;">
             </div>
             <div style="padding: 40px; background: white;">
                 <h2 style="color: #059669; margin-top: 0;">Hello {user_data['name']},</h2>
@@ -47,6 +50,15 @@ def send_reply_to_client(user_data):
     </html>
     """
     msg.attach(MIMEText(html_content, 'html'))
+
+    # Logic to attach the logo image file from your static folder
+    try:
+        with open('static/logo.png', 'rb') as f:
+            img = MIMEImage(f.read())
+            img.add_header('Content-ID', '<logo_image>')
+            msg.attach(img)
+    except Exception as e:
+        print(f"Logo Attachment Error: {e}")
 
     try:
         with smtplib.SMTP_SSL('smtp.gmail.com', 465) as server:
