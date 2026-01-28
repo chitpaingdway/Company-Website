@@ -44,12 +44,10 @@
             color: #1e293b; width: 88%; text-align: center; text-transform: uppercase;
         }
 
-        /* Detail View Styling */
         #service-detail-view { display: none; }
         .pricing-card { border: 1px solid #e2e8f0; border-radius: 2rem; padding: 2.5rem; transition: 0.3s; background: white; }
         .pricing-card:hover { border-color: #059669; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(5,150,105,0.1); }
 
-        /* Partner Slider */
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
         .slider { height: 120px; margin: auto; overflow: hidden; position: relative; width: auto; }
         .slider .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
@@ -161,52 +159,52 @@
             </div>
         </section>
 
-         <section id="team" class="bg-slate-50 py-32 px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20" data-aos="fade-up">
-                <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">The Leadership</h2>
-                <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
+        <section id="team" class="bg-slate-50 py-32 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-20" data-aos="fade-up">
+                    <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">The Leadership</h2>
+                    <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-12" data-aos="zoom-in">
+                    <div class="text-center group">
+                        <div class="relative w-44 h-44 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                                <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                        </div>
+                        <h4 class="font-black text-lg text-slate-800">Fathi Sakhri</h4>
+                        <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CEO</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative w-44 h-44 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                                <img src="{{ url_for('static', filename='nadia.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                        </div>
+                        <h4 class="font-black text-lg text-slate-800">Nadia Toughrani</h4>
+                        <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CMO</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative w-44 h-44 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                                <img src="{{ url_for('static', filename='farhan.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                        </div>
+                        <h4 class="font-black text-lg text-slate-800">Muhammad Farhan</h4>
+                        <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
+                    </div>
+                    <div class="text-center group">
+                        <div class="relative w-44 h-44 mx-auto mb-6">
+                            <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                                <img src="{{ url_for('static', filename='jelly.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                            </div>
+                        </div>
+                        <h4 class="font-black text-lg text-slate-800">Jelly Montierde</h4>
+                        <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
+                    </div>
+                </div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12" data-aos="zoom-in">
-                <div class="text-center group">
-                    <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
-                            <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                    </div>
-                    <h4 class="font-black text-lg text-slate-800">Fathi Sakhri</h4>
-                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CEO</p>
-                </div>
-                <div class="text-center group">
-                    <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
-                            <img src="{{ url_for('static', filename='nadia.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                    </div>
-                    <h4 class="font-black text-lg text-slate-800">Nadia Toughrani</h4>
-                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CMO</p>
-                </div>
-                <div class="text-center group">
-                    <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
-                            <img src="{{ url_for('static', filename='farhan.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                    </div>
-                    <h4 class="font-black text-lg text-slate-800">Muhammad Farhan</h4>
-                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
-                </div>
-                <div class="text-center group">
-                    <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
-                            <img src="{{ url_for('static', filename='jelly.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
-                        </div>
-                    </div>
-                    <h4 class="font-black text-lg text-slate-800">Jelly Montierde</h4>
-                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
         <section id="get-started" class="max-w-6xl mx-auto py-24 px-6">
             <div class="bg-slate-900 rounded-[4rem] p-10 md:p-20 shadow-3xl relative overflow-hidden">
@@ -218,6 +216,7 @@
                     <form id="inquiryForm" class="flex flex-col gap-5">
                         <input type="text" name="name" placeholder="Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <input type="email" name="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
+                        <input type="text" name="phone" placeholder="Phone Number" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white" required>
                         <select name="service" id="formServiceSelect" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white appearance-none" required>
                             <option value="" disabled selected>Select a Service</option>
                             <option value="Business Setup">Business Setup & Incorporation</option>
@@ -301,7 +300,6 @@
     <script>
         AOS.init({ duration: 1000, once: false, mirror: true });
 
-        // Content Data
         const serviceData = {
             setup: {
                 title: "Business Setup & Incorporation",
@@ -360,19 +358,15 @@
             closeDetail();
             setTimeout(() => {
                 document.getElementById('get-started').scrollIntoView({ behavior: 'smooth' });
-                // Automatically select service in form
                 const select = document.getElementById('formServiceSelect');
                 const detailTitle = document.getElementById('detail-title').innerText;
                 
-                // Try to match the selected service in form
                 for (let i = 0; i < select.options.length; i++) {
                     if (detailTitle.includes(select.options[i].value)) {
                         select.selectedIndex = i;
                         break;
                     }
                 }
-                
-                // Add note to textarea
                 document.querySelector('textarea[name="description"]').value = `I am interested in the ${planName} package for ${detailTitle}.`;
             }, 300);
         }
@@ -380,6 +374,52 @@
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('mainNav');
             window.scrollY > 50 ? nav.classList.add('nav-scrolled') : nav.classList.remove('nav-scrolled');
+        });
+
+        // --- Inquiry Form Submission Logic ---
+        document.getElementById('inquiryForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const btn = document.getElementById('submitBtn');
+            const btnText = document.getElementById('btnText');
+            const loader = document.getElementById('btnLoader');
+            const formData = new FormData(this);
+
+            // UI Update
+            btn.disabled = true;
+            btnText.innerText = "SENDING...";
+            loader.classList.remove('hidden');
+
+            try {
+                const response = await fetch('/get-started', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+
+                if (result.status === 'success') {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Success!',
+                        text: 'Your message has been sent successfully.',
+                        confirmButtonColor: '#059669'
+                    });
+                    this.reset();
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Something went wrong. Please try again later.',
+                });
+            } finally {
+                btn.disabled = false;
+                btnText.innerText = "SEND MESSAGE";
+                loader.classList.add('hidden');
+            }
         });
     </script>
 </body>
