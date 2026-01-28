@@ -4,17 +4,16 @@ from email.mime.multipart import MIMEMultipart
 from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
-app.config['DEBUG'] = True
 
 def send_email_to_admin(user_data):
+    # Email configuration
     sender_email = "chit.paingdway@gmail.com"
-    sender_password = "uygdjuldmiwdfhbh" 
+    sender_password = "uygdjuldmiwdfhbh"  # Gmail App Password
     receiver_email = "chit.dwe@burnsys.io"
 
     msg = MIMEMultipart('alternative')
-    # Changed 'company' to 'service' to match your form
-    msg['Subject'] = f"🚀 New Inquiry: {user_data['service']}"
-    msg['From'] = f"Necmergens Web <{sender_email}>"
+    msg['Subject'] = f"🚀 New Inquiry from {user_data['name']} - {user_data['service']}"
+    msg['From'] = f"Necmergens Website <{sender_email}>"
     msg['To'] = receiver_email
 
     html_content = f"""
@@ -35,6 +34,9 @@ def send_email_to_admin(user_data):
                 <div style="background: #f8fafc; padding: 15px; border-radius: 10px; font-style: italic;">
                     "{user_data['description']}"
                 </div>
+            </div>
+            <div style="background: #f1f5f9; padding: 15px; text-align: center; font-size: 12px; color: #64748b;">
+                Sent from Necmergens Automated System
             </div>
         </div>
     </body>
@@ -57,7 +59,7 @@ def index():
 
 @app.route('/get-started', methods=['POST'])
 def get_started():
-    # Matching exact form names from index.html
+    # Capture all fields from the form
     data = {
         'name': request.form.get('name'),
         'email': request.form.get('email'),
@@ -66,11 +68,13 @@ def get_started():
         'description': request.form.get('description')
     }
     
+    # Send email
     success = send_email_to_admin(data)
+    
     if success:
-        return jsonify({"status": "success"}), 200
+        return jsonify({"status": "success", "message": "Email sent"}), 200
     else:
-        return jsonify({"status": "error"}), 500
+        return jsonify({"status": "error", "message": "Failed to send email"}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
