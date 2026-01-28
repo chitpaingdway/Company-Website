@@ -161,21 +161,52 @@
             </div>
         </section>
 
-        <section id="team" class="bg-slate-50 py-32 px-6">
-            <div class="max-w-7xl mx-auto text-center mb-20">
+         <section id="team" class="bg-slate-50 py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20" data-aos="fade-up">
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">The Leadership</h2>
                 <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 max-w-7xl mx-auto">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12" data-aos="zoom-in">
                 <div class="text-center group">
-                    <div class="w-44 h-44 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-xl">
-                        <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition">
+                    <div class="relative w-44 h-44 mx-auto mb-6">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                            <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
                     </div>
-                    <h4 class="font-black text-lg">Fathi Sakhri</h4>
-                    <p class="text-green-600 text-[10px] font-black uppercase">Co-Founder & CEO</p>
+                    <h4 class="font-black text-lg text-slate-800">Fathi Sakhri</h4>
+                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CEO</p>
                 </div>
+                <div class="text-center group">
+                    <div class="relative w-44 h-44 mx-auto mb-6">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                            <img src="{{ url_for('static', filename='nadia.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-800">Nadia Toughrani</h4>
+                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Co-Founder & CMO</p>
                 </div>
-        </section>
+                <div class="text-center group">
+                    <div class="relative w-44 h-44 mx-auto mb-6">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                            <img src="{{ url_for('static', filename='farhan.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-800">Muhammad Farhan</h4>
+                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
+                </div>
+                <div class="text-center group">
+                    <div class="relative w-44 h-44 mx-auto mb-6">
+                        <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
+                            <img src="{{ url_for('static', filename='jelly.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+                        </div>
+                    </div>
+                    <h4 class="font-black text-lg text-slate-800">Jelly Montierde</h4>
+                    <p class="text-green-600 text-[10px] font-black uppercase tracking-[0.2em]">Setup Advisor</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
         <section id="get-started" class="max-w-6xl mx-auto py-24 px-6">
             <div class="bg-slate-900 rounded-[4rem] p-10 md:p-20 shadow-3xl relative overflow-hidden">
