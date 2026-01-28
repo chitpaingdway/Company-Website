@@ -18,16 +18,30 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
-        .liquid-glass {
-            background: rgba(255, 255, 255, 0.5);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.7);
-            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        /* Image Service Cards Styling */
+        .service-card {
+            position: relative;
+            height: 450px;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            transition: transform 0.5s ease;
         }
-        .liquid-glass:hover { transform: translateY(-12px); background: white; border-color: var(--primary); }
+        .service-card:hover { transform: translateY(-10px); }
+        .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+        .service-card:hover img { transform: scale(1.1); }
+        .service-label {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            white-space: nowrap;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
 
-        /* Innovation: Logo Slider Animation */
         @keyframes scroll { 0% { transform: translateX(0); } 100% { transform: translateX(calc(-250px * 5)); } }
         .slider { height: 120px; margin: auto; overflow: hidden; position: relative; width: auto; }
         .slider .slide-track { animation: scroll 30s linear infinite; display: flex; width: calc(250px * 10); }
@@ -37,9 +51,10 @@
         .loader { border: 3px solid #f3f3f3; border-radius: 50%; border-top: 3px solid #059669; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; }
         @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
         .hidden { display: none; }
+        select option { background-color: #0f172a; color: white; }
     </style>
 </head>
-<body class="bg-[#fcfdfe] text-slate-900 selection:bg-green-800 selection:text-white">
+<body class="bg-[#fcfdfe] text-slate-900">
 
     <nav class="fixed top-0 w-full z-50 glass-nav px-6 md:px-12 py-4 flex justify-between items-center">
         <div class="logo-container">
@@ -57,8 +72,7 @@
 
     <section id="home" class="relative pt-64 pb-44 px-6 min-h-[90vh] flex items-center bg-slate-900 overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2070" 
-                 class="w-full h-full object-cover opacity-40" alt="Dubai Skyline">
+            <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-40">
             <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-[#fcfdfe]"></div>
         </div>
         <div class="relative z-10 max-w-7xl mx-auto text-center" data-aos="fade-up">
@@ -104,15 +118,12 @@
             <div data-aos="fade-right">
                 <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800 mb-6">Expertise Driven by <span class="text-green-600">Vision</span></h2>
                 <div class="h-1.5 w-20 bg-green-600 mb-10 rounded-full"></div>
-                
                 <p class="text-lg text-slate-700 leading-relaxed mb-8 font-medium italic">
                     "We are a full-service market entry partner for international companies establishing operations in UAE and MENA markets."
                 </p>
-                
                 <p class="text-slate-600 leading-relaxed font-medium mb-10">
                     Necmergens was founded to address the critical gap between simple incorporation services and actual operational readiness. We specialize in Bridging cultures and business landscapes.
                 </p>
-
                 <div class="grid grid-cols-2 gap-6 mb-10">
                     <div class="bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
                         <h4 class="font-black text-green-600 text-2xl">100%</h4>
@@ -123,66 +134,54 @@
                         <p class="text-xs font-bold text-slate-400 uppercase tracking-widest">Network</p>
                     </div>
                 </div>
-
                 <div class="flex flex-col gap-5 pt-4">
-                    <a href="https://www.instagram.com/necmergens/" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-pink-600 transition font-bold group">
+                    <a href="https://www.instagram.com/necmergens/" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-pink-600 transition font-bold">
                         <i class="fab fa-instagram text-3xl"></i>
                         <span class="text-sm">instagram.com/necmergens</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/necmergens-corporate-service-provider-0554223a3/" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-blue-700 transition font-bold group">
+                    <a href="https://www.linkedin.com/in/necmergens-corporate-service-provider-0554223a3/" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-blue-700 transition font-bold">
                         <i class="fab fa-linkedin text-3xl"></i>
                         <span class="text-sm">linkedin.com/in/necmergens-corporate</span>
                     </a>
-                    <a href="https://necmergens.com" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-green-600 transition font-bold group">
+                    <a href="https://necmergens.com" target="_blank" class="flex items-center gap-4 text-slate-600 hover:text-green-600 transition font-bold">
                         <i class="fas fa-globe text-2xl"></i>
                         <span class="text-sm">necmergens.com</span>
                     </a>
                 </div>
             </div>
-            
             <div class="relative" data-aos="fade-left">
                 <div class="absolute -top-10 -left-10 w-40 h-40 bg-green-100 rounded-full -z-10 animate-pulse"></div>
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" class="rounded-[3.5rem] shadow-3xl border-8 border-white" alt="Infrastructure">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000" class="rounded-[3.5rem] shadow-3xl border-8 border-white">
             </div>
         </div>
     </section>
 
     <section id="services" class="max-w-7xl mx-auto py-32 px-6">
         <div class="text-center mb-20">
-            <h2 class="text-4xl font-black uppercase tracking-tighter text-slate-800">Our Integrated Solutions</h2>
-            <div class="h-1.5 w-20 bg-green-600 mx-auto mt-4 rounded-full"></div>
-            <p class="mt-6 text-slate-500 font-medium">Providing the operational foundation your business needs to grow.</p>
+            <h3 class="text-xs font-black tracking-[0.3em] text-slate-400 uppercase mb-4">What we offer</h3>
+            <h2 class="text-5xl font-black uppercase tracking-tighter text-slate-800">Our core consulting services</h2>
+            <div class="h-1.5 w-20 bg-green-600 mx-auto mt-6 rounded-full"></div>
+            <p class="mt-8 text-slate-600 font-medium max-w-3xl mx-auto text-lg leading-relaxed">
+                We provide comprehensive market entry services in English, French, Hindi, and Arabic to help international companies establish operations, connect with partners, and achieve sustainable growth in UAE and MENA.
+            </p>
         </div>
-        <div class="grid md:grid-cols-3 gap-8" data-aos="fade-up">
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-green-600 text-4xl mb-6"><i class="fas fa-city"></i></div>
-                <h3 class="font-black text-xl mb-4">Business Setup</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Mainland, Free Zone, and Offshore setups tailored to your global vision.</p>
+        
+        <div class="grid md:grid-cols-4 gap-6" data-aos="fade-up">
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1573164067507-40e1d6a9bc9c?auto=format&fit=crop&q=80&w=600" alt="Business Setup">
+                <div class="service-label">Business Setup & Incorporation</div>
             </div>
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-blue-600 text-4xl mb-6"><i class="fas fa-handshake-angle"></i></div>
-                <h3 class="font-black text-xl mb-4">Operational Readiness</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">End-to-end support from banking liaison to office management.</p>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=600" alt="Administrative Services">
+                <div class="service-label">Administrative Services</div>
             </div>
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-purple-600 text-4xl mb-6"><i class="fas fa-microchip"></i></div>
-                <h3 class="font-black text-xl mb-4">IT Infrastructure</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Modern technology solutions for a digital-first business environment.</p>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=600" alt="Technology">
+                <div class="service-label">Technology & IT Services</div>
             </div>
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-orange-500 text-4xl mb-6"><i class="fas fa-chart-line"></i></div>
-                <h3 class="font-black text-xl mb-4">Market Access</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Strategic guidance to navigate and conquer regional markets.</p>
-            </div>
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-red-500 text-4xl mb-6"><i class="fas fa-file-contract"></i></div>
-                <h3 class="font-black text-xl mb-4">PRO & Government</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Expert handling of all government liaisons and visa processing.</p>
-            </div>
-            <div class="liquid-glass p-10 rounded-[3rem]">
-                <div class="text-teal-600 text-4xl mb-6"><i class="fas fa-calculator"></i></div>
-                <h3 class="font-black text-xl mb-4">Financial Advisory</h3>
-                <p class="text-slate-600 text-sm leading-relaxed">Accounting, bookkeeping, and audit services you can trust.</p>
+            <div class="service-card">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=600" alt="Market Access">
+                <div class="service-label">Market Access & Partnerships</div>
             </div>
         </div>
     </section>
@@ -196,7 +195,7 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-12" data-aos="zoom-in">
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 opacity-20"></div>
+                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='fathi.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -206,7 +205,7 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 opacity-20"></div>
+                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='nadia.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -216,7 +215,7 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 opacity-20"></div>
+                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='farhan.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -226,7 +225,7 @@
                 </div>
                 <div class="text-center group">
                     <div class="relative w-44 h-44 mx-auto mb-6">
-                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 transition-transform duration-500 opacity-20"></div>
+                        <div class="absolute inset-0 bg-green-600 rounded-full scale-0 group-hover:scale-110 opacity-20 transition-transform duration-500"></div>
                         <div class="w-full h-full rounded-full overflow-hidden border-4 border-white shadow-xl relative z-10">
                             <img src="{{ url_for('static', filename='jelly.png') }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
                         </div>
@@ -248,7 +247,20 @@
                 <form id="inquiryForm" class="flex flex-col gap-5">
                     <input type="text" name="name" placeholder="Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white focus:outline-none focus:border-green-500 transition-all" required>
                     <input type="email" name="email" placeholder="Email Address" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white focus:outline-none focus:border-green-500 transition-all" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white focus:outline-none focus:border-green-500 transition-all" required>
+                    
+                    <select name="service" class="bg-slate-800 border border-white/10 p-5 rounded-2xl text-white focus:outline-none focus:border-green-500 transition-all appearance-none" required>
+                        <option value="" disabled selected>Select a Service</option>
+                        <option value="Business Setup">Business Setup & Incorporation</option>
+                        <option value="Operational Readiness">Operational Readiness</option>
+                        <option value="IT Infrastructure">IT Infrastructure</option>
+                        <option value="Market Access">Market Access</option>
+                        <option value="PRO Services">PRO & Government</option>
+                        <option value="Financial Advisory">Financial Advisory</option>
+                    </select>
+
                     <textarea name="description" placeholder="How can we help you?" class="bg-white/5 border border-white/10 p-5 rounded-2xl text-white h-32 focus:outline-none focus:border-green-500 transition-all" required></textarea>
+                    
                     <button type="submit" id="submitBtn" class="bg-white text-slate-900 py-5 rounded-2xl font-black text-xl hover:bg-green-600 hover:text-white transition-all">
                         <span id="btnText">SEND MESSAGE</span>
                         <div id="btnLoader" class="loader hidden"></div>
