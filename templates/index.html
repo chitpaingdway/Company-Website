@@ -98,6 +98,23 @@
             background: linear-gradient(135deg, rgba(5,150,105,0.2) 0%, rgba(37,99,235,0.1) 100%);
             transition: transform 0.5s ease;
         }
+        /* Navigation Menu Glass Hover Effect */
+        .nav-link {
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 12px;
+        transition: all 0.4s ease;
+        }
+
+        .nav-link:hover {
+    
+        background: rgba(255, 255, 255, 0.4); /* Liquid Glass effect */
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        color: #059669; /* Green color on hover */
+        transform: translateY(-2px);
+        }
         .team-glass-card:hover .team-img-wrapper {
             transform: scale(1.05);
         }
@@ -118,11 +135,11 @@
         <div class="logo-container">
             <a href="javascript:void(0)" onclick="closeDetail()"><img src="{{ url_for('static', filename='logo.png') }}" alt="Necmergens Logo"></a>
         </div>
-        <div class="hidden lg:flex gap-10 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
-            <a href="#home" onclick="closeDetail()" class="hover:text-green-600 transition">Home</a>
-            <a href="#about" onclick="closeDetail()" class="hover:text-green-600 transition">The Company</a>
-            <a href="#services" onclick="closeDetail()" class="hover:text-green-600 transition">Solutions</a>
-            <a href="#team" onclick="closeDetail()" class="hover:text-green-600 transition">Our Team</a>
+        <div class="hidden lg:flex gap-6 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="#home" onclick="closeDetail()" class="nav-link">Home</a>
+            <a href="#about" onclick="closeDetail()" class="nav-link">The Company</a>
+            <a href="#services" onclick="closeDetail()" class="nav-link">Solutions</a>
+            <a href="#team" onclick="closeDetail()" class="nav-link">Our Team</a>
         </div>
         <a href="#get-started" onclick="closeDetail()" class="bg-slate-900 text-white px-8 py-3 rounded-full text-[10px] font-black tracking-widest btn-animate">Contact US</a>
     </nav>
