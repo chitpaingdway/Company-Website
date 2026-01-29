@@ -118,6 +118,30 @@
         .team-glass-card:hover .team-img-wrapper {
             transform: scale(1.05);
         }
+        /* Service Detail Typography ပြင်ဆင်ချက် */
+        #detail-title {
+            font-size: 3.5rem; /* ပိုကြီးပြီး ထင်ရှားစေရန် */
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        #detail-desc {
+            font-size: 1.15rem; /* စာသားအရွယ်အစားကို ညှိရန် */
+            line-height: 1.8;   /* စာကြောင်းတစ်ကြောင်းချင်းစီကို ရှင်းလင်းစေရန် */
+            color: #475569;     /* Slate-600 color */
+            margin-bottom: 2rem;
+            text-align: justify; /* စာသားတွေကို ဘယ်ညာညီညာစေရန် */
+        }
+
+        #detail-features p {
+            font-size: 1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
         .team-img-wrapper img {
             width: 100%;
             height: 100%;
@@ -449,30 +473,30 @@
             setup: {
                 title: "Business Setup & Incorporation",
                 category: "Market Entry",
-                desc: "We provide comprehensive support to establish your legal presence in the UAE with a 100% success rate.",
+                desc: "We help you define the optimal market entry approach, navigate regulatory requirements, and build operational foundations for sustainable MENA success. Our market entry services are designed to give you complete visibility into setup options, the infrastructure to launch efficiently, and the local partnerships to scale confidently across UAE and regional markets.",
                 img: "https://g12.ae/wp-content/uploads/2025/06/Learn-About-Business-Setup-in-Dubai-with-a-Complete-Company-Formation-Guide-2.webp",
                 features: ["Mainland & Free Zone", "Trade License Setup", "Legal Consulting"]
             },
             admin: {
                 title: "Administrative & PRO Services",
                 category: "Operations",
-                desc: "Focus on your growth while we handle government approvals, visas, and documentation.",
+                desc: "Managing administrative hurdles in the UAE requires local expertise and constant communication with government bodies. We provide comprehensive PRO services, including labor contracts, immigration clearances, and corporate document processing. Our team ensures your business stays compliant with the latest UAE laws while you focus on core operations.",
                 img: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
-                features: ["Visa Processing", "Document Attestation", "Government Liaison"]
+                features: ["Visa Processing & Renewals", "Document Attestation", "Government Liaison (DED/MOHRE)"]
             },
             it: {
                 title: "Technology & IT Services",
                 category: "Innovation",
-                desc: "Full-scale IT infrastructure and digital transformation strategies for new enterprises.",
+                desc: "In today's digital economy, a robust IT infrastructure is the backbone of any successful enterprise. We offer end-to-end technology solutions, from initial cloud setup and server management to advanced cybersecurity protocols. Our experts help you implement digital transformation strategies that enhance productivity and protect your company’s digital assets.",
                 img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
-                features: ["IT Setup", "Cloud Solutions", "Cyber Security"]
+                features: ["Cloud Infrastructure Setup", "Full-scale Cyber Security", "Managed IT Support"]
             },
             market: {
                 title: "Market Access & Partnerships",
                 category: "Growth",
-                desc: "Strategic networking and local partnership development in the PAN region.",
+                desc: "Expanding into the PAN region requires more than just capital; it requires the right connections. We bridge the gap between your business and the local market by sourcing strategic partners, distributors, and corporate sponsors. Our consulting team analyzes market trends to position your brand for maximum impact and long-term growth in the Middle East.",
                 img: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
-                features: ["Local Partner Sourcing", "Strategy Consulting", "Market Entry"]
+                features: ["Strategic Local Partner Sourcing", "Market Trend Analysis", "B2B Matchmaking Services"]
             }
         };
 
