@@ -130,9 +130,12 @@
     <div id="main-page-content">
         <section id="home" class="relative pt-64 pb-44 px-6 min-h-[90vh] flex items-center bg-slate-900 overflow-hidden">
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=2070" class="w-full h-full object-cover opacity-40">
-                <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-[#fcfdfe]"></div>
-            </div>
+                <video autoplay loop muted playsinline class="w-full h-full object-cover opacity-40">
+                    <source src="{{ url_for('static', filename='dubai-city.mp4') }}" type="video/mp4">
+                    </video>
+        
+                 <div class="absolute inset-0 bg-gradient-to-b from-slate-900/80 via-transparent to-[#fcfdfe]"></div>
+             </div>
             <div class="relative z-10 max-w-7xl mx-auto text-center" data-aos="fade-up">
                 <span class="text-green-500 font-bold tracking-[0.4em] uppercase text-xs mb-6 block">Premium Corporate Services</span>
                 <h1 class="text-6xl md:text-8xl font-black mb-8 leading-tight tracking-tighter text-white">
