@@ -22,27 +22,45 @@ def send_reply_to_client(user_data):
     # The template for the client (using cid:logo_image for the embedded logo)
     html_content = f"""
     <html>
-    <body style="font-family: 'Segoe UI', Arial, sans-serif; color: #334155; line-height: 1.6;">
-        <div style="max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden;">
-            <div style="background-color: #0f172a; padding: 25px; text-align: center;">
-                <img src="cid:logo_image" alt="Necmergens" style="max-height: 50px;">
+    <body style="font-family: 'Segoe UI', Arial, sans-serif; color: #334155; line-height: 1.6; background-color: #f8fafc; padding: 20px;">
+        <div style="max-width: 600px; margin: auto; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; background-color: #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.05);">
+            
+            <div style="background-color: #ffffff; padding: 30px; text-align: center; border-bottom: 1px solid #f1f5f9;">
+                <img src="cid:logo_image" alt="Necmergens" style="max-height: 50px; width: auto;">
             </div>
-            <div style="padding: 40px; background: white;">
-                <h2 style="color: #059669; margin-top: 0;">Hello {user_data['name']},</h2>
+
+            <div style="padding: 40px;">
+                <h2 style="color: #059669; margin-top: 0; font-size: 22px;">Hello {user_data['name']},</h2>
                 <p>Thank you for reaching out to <strong>Necmergens Corporate Services</strong>.</p>
                 <p>We have received your inquiry regarding <b>{user_data['service']}</b>. One of our expert advisors will review your requirements and get back to you within 24 hours.</p>
                 
-                <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #059669;">
+                <div style="margin-top: 40px; padding-top: 25px; border-top: 2px solid #059669;">
                     <p style="margin: 0; font-weight: bold; color: #0f172a;">Best Regards,</p>
-                    <p style="margin: 5px 0 0 0; font-size: 16px; color: #059669; font-weight: 800;">Necmergens Team</p>
-                    <p style="margin: 5px 0; font-size: 13px; color: #64748b;">
-                        XL Tower Room 502, Marasi Drive, Business Bay<br>
-                        Dubai, United Arab Emirates
-                    </p>
-                    <p style="margin: 10px 0 0 0; font-size: 14px;">
+                    <p style="margin: 5px 0 20px 0; font-size: 16px; color: #059669; font-weight: 800;">Necmergens Team</p>
+                    
+                    <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top: 10px;">
+                        <tr>
+                            <td style="width: 48%; vertical-align: top; padding-right: 10px;">
+                                <p style="margin: 0; font-size: 12px; font-weight: bold; color: #0f172a; text-transform: uppercase;">Dubai Head Office</p>
+                                <p style="margin: 5px 0; font-size: 12px; color: #64748b;">
+                                IFZA Business Park - Building A2,<br>
+                                Nadd Hessa-Dubai Silicon Oasis - Dubai, UAE
+                                </p>
+                            </td>
+                            <td style="width: 4%; border-left: 1px solid #e2e8f0;"></td>
+                            <td style="width: 48%; vertical-align: top; padding-left: 10px;">
+                                <p style="margin: 0; font-size: 12px; font-weight: bold; color: #0f172a; text-transform: uppercase;">Regional Office</p>
+                                <p style="margin: 5px 0; font-size: 12px; color: #64748b;">
+                                XL Tower Room 502, Marasi Drive,Business Bay, Dubai, UAE 
+                                </p>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div style="margin-top: 25px; font-size: 13px; color: #334155; background-color: #f8fafc; padding: 15px; border-radius: 8px;">
                         <strong>Phone:</strong> +971 52 355 7541<br>
-                        <strong>Email:</strong> contact@necmergens.com
-                    </p>
+                        <strong>Email:</strong> <a href="mailto:contact@necmergens.com" style="color: #059669; text-decoration: none;">contact@necmergens.com</a>
+                    </div>
                 </div>
             </div>
         </div>
