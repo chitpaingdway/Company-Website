@@ -26,25 +26,73 @@
         .btn-animate { transition: all 0.3s ease; }
         .btn-animate:hover { transform: scale(1.05); box-shadow: 0 10px 25px rgba(5, 150, 105, 0.3); }
         
-        .service-card {
-            position: relative;
-            height: 450px;
-            border-radius: 1.5rem;
-            overflow: hidden;
-            transition: transform 0.5s ease;
-            cursor: pointer;
-        }
-        .service-card:hover { transform: translateY(-10px); }
-        .service-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
-        .service-card:hover img { transform: scale(1.1); }
+        /* Burnsys-style Service Card */
+.service-card {
+    background: #ffffff;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    height: 100%;
+}
 
-        .service-label {
-            position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
-            background: white; padding: 8px 10px; border-radius: 8px;
-            font-weight: 800; font-size: 0.7rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            color: #1e293b; width: 88%; text-align: center; text-transform: uppercase;
-        }
+/* Mouse Hover လုပ်ရင် Necmergens Green Glow ထွက်လာစေရန် */
+.service-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(5, 150, 105, 0.15);
+    border-color: rgba(5, 150, 105, 0.3);
+}
 
+/* ပုံကို အပေါ်တစ်ဝက် သီးသန့်ထားခြင်း */
+.service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    position: static; /* အရင် Overlay ပုံစံကို ဖျောက်ရန် */
+}
+
+.service-card:hover img {
+    transform: scale(1.08);
+}
+
+/* Service Label ကို အောက်တစ်ဝက်မှာ စာသားအဖြစ် ပြောင်းလဲခြင်း */
+.service-label {
+    position: static; /* Absolute ကနေ Static ပြောင်းမှ အောက်ကို ရောက်မှာပါ */
+    background: white;
+    padding: 1.5rem;
+    color: #1e293b; /* Dark text */
+    font-weight: 700;
+    text-align: center;
+    width: 100%;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Details Button လေးကို CSS Pseudo-element နဲ့ ထည့်လိုက်ပါမယ် (HTML ပြင်စရာမလိုအောင်) */
+.service-label::after {
+    content: 'Details';
+    display: inline-block;
+    padding: 6px 24px;
+    border: 1.5px solid #059669;
+    color: #059669;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-label::after {
+    background: #059669;
+    color: white;
+}
         #service-detail-view { display: none; }
         .pricing-card { border: 1px solid #e2e8f0; border-radius: 2rem; padding: 2.5rem; transition: 0.3s; background: white; }
         .pricing-card:hover { border-color: #059669; transform: translateY(-5px); box-shadow: 0 20px 40px rgba(5,150,105,0.1); }
@@ -377,23 +425,26 @@
             </div>
             
             <div class="grid md:grid-cols-4 gap-6">
-                <div class="service-card" data-aos="zoom-in" onclick="openDetail('setup')">
-                    <img src="https://reesaccounting.com/wp-content/uploads/2025/11/incorporation-services-london-ontario-business-setup.webp" alt="Business Setup">
-                    <div class="service-label">Business Setup & Incorporation</div>
+                    <div class="service-card" data-aos="zoom-in" onclick="openDetail('setup')">
+                        <img src="https://reesaccounting.com/wp-content/uploads/2025/11/incorporation-services-london-ontario-business-setup.webp" alt="Business Setup">
+                        <div class="service-label">Business Setup & Incorporation</div>
+                    </div>
+                    
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="100" onclick="openDetail('admin')">
+                        <img src="https://images.pexels.com/photos/17065769/pexels-photo-17065769.jpeg" alt="Administrative Services">
+                        <div class="service-label">Administrative Services</div>
+                    </div>
+                    
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="300" onclick="openDetail('market')">
+                        <img src="https://www.productlifegroup.com/wp-content/uploads/2024/11/Homepage-paragraph-Why-PLG-scaled.webp" alt="Market Access">
+                        <div class="service-label">Market Access & Partnerships</div>
+                    </div>
+                    <div class="service-card" data-aos="zoom-in" data-aos-delay="200" onclick="openDetail('it')">
+                        <img src="https://images.pexels.com/photos/442150/pexels-photo-442150.jpeg" alt="Technology">
+                        <div class="service-label">Technology & IT Services</div>
+                    </div>
+                    
                 </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="100" onclick="openDetail('admin')">
-                    <img src="https://images.pexels.com/photos/17065769/pexels-photo-17065769.jpeg" alt="Administrative Services">
-                    <div class="service-label">Administrative Services</div>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="200" onclick="openDetail('it')">
-                    <img src="https://images.pexels.com/photos/5480781/pexels-photo-5480781.jpeg" alt="Technology">
-                    <div class="service-label">Technology & IT Services</div>
-                </div>
-                <div class="service-card" data-aos="zoom-in" data-aos-delay="300" onclick="openDetail('market')">
-                    <img src="https://images.pexels.com/photos/7706930/pexels-photo-7706930.jpeg" alt="Market Access">
-                    <div class="service-label">Market Access & Partnerships</div>
-                </div>
-            </div>
         </section>
             <section id="team" class="bg-slate-50 py-32 px-6">
     <div class="max-w-5xl mx-auto"> 
@@ -625,14 +676,14 @@
                 title: "Administrative & PRO Services",
                 category: "Operations",
                 desc: "Managing administrative hurdles in the UAE requires local expertise and constant communication with government bodies. We provide comprehensive PRO services, including labor contracts, immigration clearances, and corporate document processing. Our team ensures your business stays compliant with the latest UAE laws while you focus on core operations.",
-                img: "https://images.pexels.com/photos/17065769/pexels-photo-17065769.jpeg",
+                img: "https://images.pexels.com/photos/7693738/pexels-photo-7693738.jpeg",
                 features: ["Visa Processing & Renewals", "Document Attestation", "Government Liaison (DED/MOHRE)"]
             },
             it: {
                 title: "Technology & IT Services",
                 category: "Innovation",
                 desc: "In today's digital economy, a robust IT infrastructure is the backbone of any successful enterprise. We offer end-to-end technology solutions, from initial cloud setup and server management to advanced cybersecurity protocols. Our experts help you implement digital transformation strategies that enhance productivity and protect your company’s digital assets.",
-                img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800",
+                img: "https://images.pexels.com/photos/5203849/pexels-photo-5203849.jpeg",
                 features: ["Cloud Infrastructure Setup", "Full-scale Cyber Security", "Managed IT Support"]
             },
             market: {
